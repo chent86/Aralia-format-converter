@@ -1,0 +1,371 @@
+<?xml version="1.0" ?>
+<open-psa>
+ <define-fault-tree name="test">
+  <define-basic-event name="e84">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e122">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e12">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e106">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e5">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e97">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e36">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e94">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e85">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e18">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e65">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e95">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e81">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e60">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e32">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e117">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e9">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e89">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e54">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e116">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e10">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e29">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e75">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e66">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e35">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e64">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e7">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e100">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e79">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e113">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e101">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e47">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e44">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e74">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e30">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e61">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e13">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e8">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e78">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e25">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e24">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e33">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e45">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e48">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e4">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e37">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e68">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e108">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e43">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e119">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e31">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e82">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e28">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e39">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e21">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e34">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e56">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e76">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e98">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e114">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e58">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e11">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e93">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e3">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e105">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e51">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e88">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e49">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e70">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e87">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e109">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e19">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e90">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e20">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e62">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e71">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e102">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e80">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e103">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e96">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e42">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e83">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e38">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e59">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e50">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e46">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e15">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e112">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e115">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e55">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e107">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e121">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e41">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e14">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e91">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e17">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e86">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e92">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e111">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e53">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e73">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e16">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e69">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e26">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e118">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e22">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e6">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e104">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e40">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e72">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e77">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e1">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e52">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e57">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e23">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e99">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e63">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e110">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e120">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e27">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e67">
+   <float value="0.01"/>
+  </define-basic-event>
+  <define-basic-event name="e2">
+   <float value="0.01"/>
+  </define-basic-event>
+ </define-fault-tree>
+</open-psa>

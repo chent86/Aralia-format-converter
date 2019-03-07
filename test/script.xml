@@ -1,0 +1,33 @@
+<?xml version="1.0" ?><xfta>                         
+                           <load>                                                  
+                                                      <model input="../result/edfpa15r.xml"/>                                                  
+                                                      <model input="../result/edfpa15r-basic-events.xml"/>                                                  
+                           </load>                         
+                           <build>                                                  
+                                                      <minimal-cutsets>                                                                           
+                                                                                 <option name="top-event" value="r1"/>                                                                           
+                                                                                 <option name="handle" value="MCS"/>                                                                           
+                                                                                 <option name="minimum-probability" value="1.0e-10"/>                                                                           
+                                                      </minimal-cutsets>                                                  
+                           </build>                         
+                           <set>                                                  
+                                                      <option name="print-minimal-cutset-rank" value="on"/>                                                  
+                                                      <option name="print-minimal-cutset-order" value="on"/>                                                  
+                                                      <option name="print-minimal-cutset-probability" value="on"/>                                                  
+                                                      <option name="print-minimal-cutset-contribution" value="on"/>                                                  
+                           </set>                         
+                           <print>                                                  
+                                                      <minimal-cutsets handle="MCS" output="xftar_result/edfpa15r/msc" top-event="r1"/>                                                  
+                           </print>                         
+                           <compute>                                                  
+                                                      <probability handle="MCS" output="xftar_result/edfpa15r/pr" top-event="r1">                                                                           
+                                                                                 <option name="first-date" value="8760"/>                                                                           
+                                                                                 <option name="last-date" value="17520"/>                                                                           
+                                                                                 <option name="step" value="876"/>                                                                           
+                                                                                 <option name="add-singular-points" value="off"/>                                                                           
+                                                                                 <option name="smooth-curve" value="off"/>                                                                           
+                                                                                 <option name="print-unavailability" value="on"/>                                                                           
+                                                      </probability>                                                  
+                                                      <importance-factors handle="MCS" output="xftar_result/edfpa15r/if" top-event="r1"/>                                                  
+                           </compute>                         
+</xfta>

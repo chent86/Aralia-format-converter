@@ -1,0 +1,1855 @@
+<?xml version="1.0" ?>
+<open-psa>
+ <define-fault-tree name="r1">
+  <define-gate name="g1">
+   <and>
+    <not>
+     <event name="g2"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g2">
+   <or>
+    <event name="g3"/>
+    <event name="g4"/>
+    <event name="g5"/>
+   </or>
+  </define-gate>
+  <define-gate name="g3">
+   <or>
+    <event name="e4"/>
+    <event name="e5"/>
+   </or>
+  </define-gate>
+  <define-gate name="g4">
+   <or>
+    <event name="e2"/>
+    <event name="e3"/>
+   </or>
+  </define-gate>
+  <define-gate name="g5">
+   <or>
+    <event name="g38"/>
+    <event name="e1"/>
+   </or>
+  </define-gate>
+  <define-gate name="g6">
+   <and>
+    <not>
+     <event name="g7"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g7">
+   <or>
+    <event name="g3"/>
+    <event name="g8"/>
+    <event name="g9"/>
+   </or>
+  </define-gate>
+  <define-gate name="g8">
+   <or>
+    <event name="e2"/>
+    <event name="e3"/>
+   </or>
+  </define-gate>
+  <define-gate name="g9">
+   <or>
+    <event name="g38"/>
+    <event name="e6"/>
+   </or>
+  </define-gate>
+  <define-gate name="g10">
+   <and>
+    <not>
+     <event name="g11"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g11">
+   <or>
+    <event name="g3"/>
+    <event name="g12"/>
+    <event name="g13"/>
+   </or>
+  </define-gate>
+  <define-gate name="g12">
+   <or>
+    <event name="g38"/>
+    <event name="e7"/>
+   </or>
+  </define-gate>
+  <define-gate name="g13">
+   <or>
+    <event name="e2"/>
+    <event name="e3"/>
+   </or>
+  </define-gate>
+  <define-gate name="g14">
+   <and>
+    <not>
+     <event name="g15"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g15">
+   <or>
+    <event name="g3"/>
+    <event name="g16"/>
+    <event name="g17"/>
+   </or>
+  </define-gate>
+  <define-gate name="g16">
+   <or>
+    <event name="e2"/>
+    <event name="e9"/>
+   </or>
+  </define-gate>
+  <define-gate name="g17">
+   <or>
+    <event name="g38"/>
+    <event name="e8"/>
+   </or>
+  </define-gate>
+  <define-gate name="g18">
+   <and>
+    <not>
+     <event name="g19"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g19">
+   <or>
+    <event name="g3"/>
+    <event name="g20"/>
+    <event name="g21"/>
+   </or>
+  </define-gate>
+  <define-gate name="g20">
+   <or>
+    <event name="e2"/>
+    <event name="e9"/>
+   </or>
+  </define-gate>
+  <define-gate name="g21">
+   <or>
+    <event name="g38"/>
+    <event name="e10"/>
+   </or>
+  </define-gate>
+  <define-gate name="g22">
+   <and>
+    <not>
+     <event name="g23"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g23">
+   <or>
+    <event name="g3"/>
+    <event name="g24"/>
+    <event name="g25"/>
+   </or>
+  </define-gate>
+  <define-gate name="g24">
+   <or>
+    <event name="g38"/>
+    <event name="e11"/>
+   </or>
+  </define-gate>
+  <define-gate name="g25">
+   <or>
+    <event name="e2"/>
+    <event name="e9"/>
+   </or>
+  </define-gate>
+  <define-gate name="g26">
+   <and>
+    <not>
+     <event name="g27"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g27">
+   <or>
+    <event name="g3"/>
+    <event name="g28"/>
+    <event name="g29"/>
+   </or>
+  </define-gate>
+  <define-gate name="g28">
+   <or>
+    <event name="e13"/>
+    <event name="e2"/>
+   </or>
+  </define-gate>
+  <define-gate name="g29">
+   <or>
+    <event name="e12"/>
+    <event name="g38"/>
+   </or>
+  </define-gate>
+  <define-gate name="g30">
+   <and>
+    <not>
+     <event name="g31"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g31">
+   <or>
+    <event name="g3"/>
+    <event name="g32"/>
+    <event name="g33"/>
+   </or>
+  </define-gate>
+  <define-gate name="g32">
+   <or>
+    <event name="e13"/>
+    <event name="e2"/>
+   </or>
+  </define-gate>
+  <define-gate name="g33">
+   <or>
+    <event name="e14"/>
+    <event name="g38"/>
+   </or>
+  </define-gate>
+  <define-gate name="g34">
+   <and>
+    <not>
+     <event name="g35"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g35">
+   <or>
+    <event name="g3"/>
+    <event name="g36"/>
+    <event name="g37"/>
+   </or>
+  </define-gate>
+  <define-gate name="g36">
+   <or>
+    <event name="e15"/>
+    <event name="g38"/>
+   </or>
+  </define-gate>
+  <define-gate name="g37">
+   <or>
+    <event name="e13"/>
+    <event name="e2"/>
+   </or>
+  </define-gate>
+  <define-gate name="g38">
+   <or>
+    <event name="e4"/>
+    <event name="e5"/>
+   </or>
+  </define-gate>
+  <define-gate name="g39">
+   <and>
+    <not>
+     <event name="g40"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g40">
+   <or>
+    <event name="e16"/>
+    <event name="e17"/>
+   </or>
+  </define-gate>
+  <define-gate name="g41">
+   <and>
+    <not>
+     <event name="g42"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g42">
+   <or>
+    <event name="e18"/>
+    <event name="e19"/>
+   </or>
+  </define-gate>
+  <define-gate name="g43">
+   <or>
+    <event name="e20"/>
+    <event name="e21"/>
+    <event name="g44"/>
+    <event name="e1"/>
+   </or>
+  </define-gate>
+  <define-gate name="g44">
+   <or>
+    <event name="e16"/>
+    <event name="e17"/>
+   </or>
+  </define-gate>
+  <define-gate name="g45">
+   <or>
+    <event name="e20"/>
+    <event name="e21"/>
+    <event name="g44"/>
+    <event name="e8"/>
+   </or>
+  </define-gate>
+  <define-gate name="g46">
+   <or>
+    <event name="e20"/>
+    <event name="g44"/>
+    <event name="e21"/>
+    <event name="e12"/>
+   </or>
+  </define-gate>
+  <define-gate name="g47">
+   <or>
+    <event name="g48"/>
+    <event name="e22"/>
+    <event name="e20"/>
+    <event name="e6"/>
+   </or>
+  </define-gate>
+  <define-gate name="g48">
+   <or>
+    <event name="e18"/>
+    <event name="e19"/>
+   </or>
+  </define-gate>
+  <define-gate name="g49">
+   <or>
+    <event name="g48"/>
+    <event name="e22"/>
+    <event name="e20"/>
+    <event name="e10"/>
+   </or>
+  </define-gate>
+  <define-gate name="g50">
+   <or>
+    <event name="g48"/>
+    <event name="e22"/>
+    <event name="e20"/>
+    <event name="e14"/>
+   </or>
+  </define-gate>
+  <define-gate name="g51">
+   <or>
+    <event name="e20"/>
+    <event name="e23"/>
+    <event name="g52"/>
+    <event name="e24"/>
+   </or>
+  </define-gate>
+  <define-gate name="g52">
+   <or>
+    <event name="e4"/>
+    <event name="e25"/>
+   </or>
+  </define-gate>
+  <define-gate name="g53">
+   <or>
+    <event name="e20"/>
+    <event name="e23"/>
+    <event name="g52"/>
+    <event name="e26"/>
+   </or>
+  </define-gate>
+  <define-gate name="g54">
+   <or>
+    <event name="e20"/>
+    <event name="g52"/>
+    <event name="e23"/>
+    <event name="e27"/>
+   </or>
+  </define-gate>
+  <define-gate name="g55">
+   <atleast min="2">
+    <event name="g47"/>
+    <event name="g51"/>
+    <event name="g43"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g56">
+   <atleast min="2">
+    <event name="g49"/>
+    <event name="g53"/>
+    <event name="g45"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g57">
+   <atleast min="2">
+    <event name="g50"/>
+    <event name="g54"/>
+    <event name="g46"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g58">
+   <and>
+    <event name="g1"/>
+    <event name="g55"/>
+   </and>
+  </define-gate>
+  <define-gate name="g59">
+   <and>
+    <event name="g14"/>
+    <event name="g56"/>
+   </and>
+  </define-gate>
+  <define-gate name="g60">
+   <and>
+    <event name="g26"/>
+    <event name="g57"/>
+   </and>
+  </define-gate>
+  <define-gate name="g61">
+   <and>
+    <event name="g6"/>
+    <event name="g55"/>
+   </and>
+  </define-gate>
+  <define-gate name="g62">
+   <and>
+    <event name="g18"/>
+    <event name="g56"/>
+   </and>
+  </define-gate>
+  <define-gate name="g63">
+   <and>
+    <event name="g30"/>
+    <event name="g57"/>
+   </and>
+  </define-gate>
+  <define-gate name="g64">
+   <and>
+    <event name="g10"/>
+    <event name="g55"/>
+   </and>
+  </define-gate>
+  <define-gate name="g65">
+   <and>
+    <event name="g22"/>
+    <event name="g56"/>
+   </and>
+  </define-gate>
+  <define-gate name="g66">
+   <and>
+    <event name="g34"/>
+    <event name="g57"/>
+   </and>
+  </define-gate>
+  <define-gate name="g67">
+   <xor>
+    <event name="g68"/>
+    <event name="g69"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g68">
+   <or>
+    <event name="g70"/>
+    <event name="e28"/>
+   </or>
+  </define-gate>
+  <define-gate name="g69">
+   <or>
+    <event name="g71"/>
+    <event name="e29"/>
+   </or>
+  </define-gate>
+  <define-gate name="g70">
+   <atleast min="2">
+    <event name="g133"/>
+    <event name="g134"/>
+    <event name="g135"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g71">
+   <atleast min="2">
+    <event name="g133"/>
+    <event name="g134"/>
+    <event name="g135"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g72">
+   <xor>
+    <event name="g73"/>
+    <event name="g74"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g73">
+   <or>
+    <event name="g75"/>
+    <event name="e30"/>
+   </or>
+  </define-gate>
+  <define-gate name="g74">
+   <or>
+    <event name="g76"/>
+    <event name="e31"/>
+   </or>
+  </define-gate>
+  <define-gate name="g75">
+   <atleast min="2">
+    <event name="g127"/>
+    <event name="g128"/>
+    <event name="g129"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g76">
+   <atleast min="2">
+    <event name="g127"/>
+    <event name="g128"/>
+    <event name="g129"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g77">
+   <xor>
+    <event name="g78"/>
+    <event name="g79"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g78">
+   <or>
+    <event name="g80"/>
+    <event name="e32"/>
+   </or>
+  </define-gate>
+  <define-gate name="g79">
+   <or>
+    <event name="g81"/>
+    <event name="e33"/>
+   </or>
+  </define-gate>
+  <define-gate name="g80">
+   <atleast min="2">
+    <event name="g139"/>
+    <event name="g140"/>
+    <event name="g141"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g81">
+   <atleast min="2">
+    <event name="g139"/>
+    <event name="g140"/>
+    <event name="g141"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g82">
+   <xor>
+    <event name="g83"/>
+    <event name="g84"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g83">
+   <or>
+    <event name="g85"/>
+    <event name="e34"/>
+   </or>
+  </define-gate>
+  <define-gate name="g84">
+   <or>
+    <event name="g86"/>
+    <event name="e35"/>
+   </or>
+  </define-gate>
+  <define-gate name="g85">
+   <atleast min="2">
+    <event name="g133"/>
+    <event name="g134"/>
+    <event name="g135"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g86">
+   <atleast min="2">
+    <event name="g133"/>
+    <event name="g134"/>
+    <event name="g135"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g87">
+   <xor>
+    <event name="g88"/>
+    <event name="g89"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g88">
+   <or>
+    <event name="g90"/>
+    <event name="e36"/>
+   </or>
+  </define-gate>
+  <define-gate name="g89">
+   <or>
+    <event name="g91"/>
+    <event name="e37"/>
+   </or>
+  </define-gate>
+  <define-gate name="g90">
+   <atleast min="2">
+    <event name="g127"/>
+    <event name="g128"/>
+    <event name="g129"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g91">
+   <atleast min="2">
+    <event name="g127"/>
+    <event name="g128"/>
+    <event name="g129"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g92">
+   <xor>
+    <event name="g93"/>
+    <event name="g94"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g93">
+   <or>
+    <event name="g95"/>
+    <event name="e38"/>
+   </or>
+  </define-gate>
+  <define-gate name="g94">
+   <or>
+    <event name="g96"/>
+    <event name="e39"/>
+   </or>
+  </define-gate>
+  <define-gate name="g95">
+   <atleast min="2">
+    <event name="g139"/>
+    <event name="g140"/>
+    <event name="g141"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g96">
+   <atleast min="2">
+    <event name="g139"/>
+    <event name="g140"/>
+    <event name="g141"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g97">
+   <xor>
+    <event name="g98"/>
+    <event name="g99"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g98">
+   <or>
+    <event name="g100"/>
+    <event name="e40"/>
+   </or>
+  </define-gate>
+  <define-gate name="g99">
+   <or>
+    <event name="g101"/>
+    <event name="e41"/>
+   </or>
+  </define-gate>
+  <define-gate name="g100">
+   <atleast min="2">
+    <event name="g139"/>
+    <event name="g140"/>
+    <event name="g141"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g101">
+   <atleast min="2">
+    <event name="g139"/>
+    <event name="g140"/>
+    <event name="g141"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g102">
+   <xor>
+    <event name="g103"/>
+    <event name="g104"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g103">
+   <or>
+    <event name="g105"/>
+    <event name="e42"/>
+   </or>
+  </define-gate>
+  <define-gate name="g104">
+   <or>
+    <event name="g106"/>
+    <event name="e43"/>
+   </or>
+  </define-gate>
+  <define-gate name="g105">
+   <atleast min="2">
+    <event name="g127"/>
+    <event name="g128"/>
+    <event name="g129"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g106">
+   <atleast min="2">
+    <event name="g127"/>
+    <event name="g128"/>
+    <event name="g129"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g107">
+   <xor>
+    <event name="g108"/>
+    <event name="g109"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g108">
+   <or>
+    <event name="g110"/>
+    <event name="e44"/>
+   </or>
+  </define-gate>
+  <define-gate name="g109">
+   <or>
+    <event name="g111"/>
+    <event name="e45"/>
+   </or>
+  </define-gate>
+  <define-gate name="g110">
+   <atleast min="2">
+    <event name="g133"/>
+    <event name="g134"/>
+    <event name="g135"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g111">
+   <atleast min="2">
+    <event name="g133"/>
+    <event name="g134"/>
+    <event name="g135"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g112">
+   <xor>
+    <event name="g113"/>
+    <event name="g114"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g113">
+   <or>
+    <event name="e46"/>
+    <event name="g115"/>
+   </or>
+  </define-gate>
+  <define-gate name="g114">
+   <or>
+    <event name="g116"/>
+    <event name="e47"/>
+   </or>
+  </define-gate>
+  <define-gate name="g115">
+   <atleast min="2">
+    <event name="g139"/>
+    <event name="g140"/>
+    <event name="g141"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g116">
+   <atleast min="2">
+    <event name="g139"/>
+    <event name="g140"/>
+    <event name="g141"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g117">
+   <xor>
+    <event name="g118"/>
+    <event name="g119"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g118">
+   <or>
+    <event name="e48"/>
+    <event name="g120"/>
+   </or>
+  </define-gate>
+  <define-gate name="g119">
+   <or>
+    <event name="g121"/>
+    <event name="e49"/>
+   </or>
+  </define-gate>
+  <define-gate name="g120">
+   <atleast min="2">
+    <event name="g127"/>
+    <event name="g128"/>
+    <event name="g129"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g121">
+   <atleast min="2">
+    <event name="g127"/>
+    <event name="g128"/>
+    <event name="g129"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g122">
+   <xor>
+    <event name="g123"/>
+    <event name="g124"/>
+   </xor>
+  </define-gate>
+  <define-gate name="g123">
+   <or>
+    <event name="e50"/>
+    <event name="g125"/>
+   </or>
+  </define-gate>
+  <define-gate name="g124">
+   <or>
+    <event name="g126"/>
+    <event name="e51"/>
+   </or>
+  </define-gate>
+  <define-gate name="g125">
+   <atleast min="2">
+    <event name="g133"/>
+    <event name="g134"/>
+    <event name="g135"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g126">
+   <atleast min="2">
+    <event name="g133"/>
+    <event name="g134"/>
+    <event name="g135"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g127">
+   <or>
+    <event name="e52"/>
+    <event name="g130"/>
+   </or>
+  </define-gate>
+  <define-gate name="g128">
+   <or>
+    <event name="e53"/>
+    <event name="g131"/>
+   </or>
+  </define-gate>
+  <define-gate name="g129">
+   <or>
+    <event name="e54"/>
+    <event name="g132"/>
+   </or>
+  </define-gate>
+  <define-gate name="g130">
+   <or>
+    <event name="e67"/>
+    <event name="g168"/>
+   </or>
+  </define-gate>
+  <define-gate name="g131">
+   <or>
+    <event name="e64"/>
+    <event name="g165"/>
+   </or>
+  </define-gate>
+  <define-gate name="g132">
+   <or>
+    <event name="e61"/>
+    <event name="g162"/>
+   </or>
+  </define-gate>
+  <define-gate name="g133">
+   <or>
+    <event name="e55"/>
+    <event name="g136"/>
+   </or>
+  </define-gate>
+  <define-gate name="g134">
+   <or>
+    <event name="e56"/>
+    <event name="g137"/>
+   </or>
+  </define-gate>
+  <define-gate name="g135">
+   <or>
+    <event name="e57"/>
+    <event name="g138"/>
+   </or>
+  </define-gate>
+  <define-gate name="g136">
+   <or>
+    <event name="e68"/>
+    <event name="g169"/>
+   </or>
+  </define-gate>
+  <define-gate name="g137">
+   <or>
+    <event name="e65"/>
+    <event name="g166"/>
+   </or>
+  </define-gate>
+  <define-gate name="g138">
+   <or>
+    <event name="e62"/>
+    <event name="g163"/>
+   </or>
+  </define-gate>
+  <define-gate name="g139">
+   <or>
+    <event name="e58"/>
+    <event name="g142"/>
+   </or>
+  </define-gate>
+  <define-gate name="g140">
+   <or>
+    <event name="e59"/>
+    <event name="g143"/>
+   </or>
+  </define-gate>
+  <define-gate name="g141">
+   <or>
+    <event name="e60"/>
+    <event name="g144"/>
+   </or>
+  </define-gate>
+  <define-gate name="g142">
+   <or>
+    <event name="e69"/>
+    <event name="g170"/>
+   </or>
+  </define-gate>
+  <define-gate name="g143">
+   <or>
+    <event name="e66"/>
+    <event name="g167"/>
+   </or>
+  </define-gate>
+  <define-gate name="g144">
+   <or>
+    <event name="e63"/>
+    <event name="g164"/>
+   </or>
+  </define-gate>
+  <define-gate name="g145">
+   <and>
+    <event name="g146"/>
+    <event name="g147"/>
+   </and>
+  </define-gate>
+  <define-gate name="g146">
+   <or>
+    <event name="g148"/>
+    <event name="g149"/>
+   </or>
+  </define-gate>
+  <define-gate name="g147">
+   <or>
+    <event name="g150"/>
+    <event name="g151"/>
+   </or>
+  </define-gate>
+  <define-gate name="g148">
+   <and>
+    <event name="g152"/>
+    <event name="g267"/>
+   </and>
+  </define-gate>
+  <define-gate name="g149">
+   <and>
+    <event name="g153"/>
+    <event name="g266"/>
+   </and>
+  </define-gate>
+  <define-gate name="g150">
+   <and>
+    <event name="g152"/>
+    <event name="g265"/>
+   </and>
+  </define-gate>
+  <define-gate name="g151">
+   <and>
+    <event name="g153"/>
+    <event name="g264"/>
+   </and>
+  </define-gate>
+  <define-gate name="g152">
+   <and>
+    <not>
+     <event name="e16"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g153">
+   <and>
+    <not>
+     <event name="e18"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g154">
+   <and>
+    <event name="g155"/>
+    <event name="g156"/>
+   </and>
+  </define-gate>
+  <define-gate name="g155">
+   <or>
+    <event name="g157"/>
+    <event name="g158"/>
+   </or>
+  </define-gate>
+  <define-gate name="g156">
+   <or>
+    <event name="g159"/>
+    <event name="g160"/>
+   </or>
+  </define-gate>
+  <define-gate name="g157">
+   <and>
+    <event name="g153"/>
+    <event name="g271"/>
+   </and>
+  </define-gate>
+  <define-gate name="g158">
+   <and>
+    <event name="g152"/>
+    <event name="g270"/>
+   </and>
+  </define-gate>
+  <define-gate name="g159">
+   <and>
+    <event name="g153"/>
+    <event name="g269"/>
+   </and>
+  </define-gate>
+  <define-gate name="g160">
+   <and>
+    <event name="g152"/>
+    <event name="g268"/>
+   </and>
+  </define-gate>
+  <define-gate name="g161">
+   <and>
+    <not>
+     <event name="g154"/>
+    </not>
+   </and>
+  </define-gate>
+  <define-gate name="g162">
+   <or>
+    <event name="g189"/>
+    <event name="g198"/>
+    <event name="g58"/>
+    <event name="g199"/>
+   </or>
+  </define-gate>
+  <define-gate name="g163">
+   <or>
+    <event name="g190"/>
+    <event name="g205"/>
+    <event name="g59"/>
+    <event name="g206"/>
+   </or>
+  </define-gate>
+  <define-gate name="g164">
+   <or>
+    <event name="g191"/>
+    <event name="g212"/>
+    <event name="g60"/>
+    <event name="g213"/>
+   </or>
+  </define-gate>
+  <define-gate name="g165">
+   <or>
+    <event name="g192"/>
+    <event name="g219"/>
+    <event name="g61"/>
+    <event name="g220"/>
+   </or>
+  </define-gate>
+  <define-gate name="g166">
+   <or>
+    <event name="g193"/>
+    <event name="g223"/>
+    <event name="g62"/>
+    <event name="g224"/>
+   </or>
+  </define-gate>
+  <define-gate name="g167">
+   <or>
+    <event name="g194"/>
+    <event name="g227"/>
+    <event name="g63"/>
+    <event name="g228"/>
+   </or>
+  </define-gate>
+  <define-gate name="g168">
+   <or>
+    <event name="g195"/>
+    <event name="g231"/>
+    <event name="g232"/>
+    <event name="g64"/>
+   </or>
+  </define-gate>
+  <define-gate name="g169">
+   <or>
+    <event name="g196"/>
+    <event name="g235"/>
+    <event name="g236"/>
+    <event name="g65"/>
+   </or>
+  </define-gate>
+  <define-gate name="g170">
+   <or>
+    <event name="g197"/>
+    <event name="g239"/>
+    <event name="g240"/>
+    <event name="g66"/>
+   </or>
+  </define-gate>
+  <define-gate name="g171">
+   <or>
+    <event name="e70"/>
+    <event name="e71"/>
+   </or>
+  </define-gate>
+  <define-gate name="g172">
+   <or>
+    <event name="e70"/>
+    <event name="e72"/>
+   </or>
+  </define-gate>
+  <define-gate name="g173">
+   <or>
+    <event name="e73"/>
+    <event name="e70"/>
+   </or>
+  </define-gate>
+  <define-gate name="g174">
+   <or>
+    <event name="e70"/>
+    <event name="e71"/>
+   </or>
+  </define-gate>
+  <define-gate name="g175">
+   <or>
+    <event name="e70"/>
+    <event name="e72"/>
+   </or>
+  </define-gate>
+  <define-gate name="g176">
+   <or>
+    <event name="e73"/>
+    <event name="e70"/>
+   </or>
+  </define-gate>
+  <define-gate name="g177">
+   <or>
+    <event name="e70"/>
+    <event name="e71"/>
+   </or>
+  </define-gate>
+  <define-gate name="g178">
+   <or>
+    <event name="e70"/>
+    <event name="e72"/>
+   </or>
+  </define-gate>
+  <define-gate name="g179">
+   <or>
+    <event name="e73"/>
+    <event name="e70"/>
+   </or>
+  </define-gate>
+  <define-gate name="g180">
+   <or>
+    <event name="e74"/>
+    <event name="e7"/>
+   </or>
+  </define-gate>
+  <define-gate name="g181">
+   <or>
+    <event name="e74"/>
+    <event name="e11"/>
+   </or>
+  </define-gate>
+  <define-gate name="g182">
+   <or>
+    <event name="e15"/>
+    <event name="e74"/>
+   </or>
+  </define-gate>
+  <define-gate name="g183">
+   <or>
+    <event name="e74"/>
+    <event name="e7"/>
+   </or>
+  </define-gate>
+  <define-gate name="g184">
+   <or>
+    <event name="e74"/>
+    <event name="e11"/>
+   </or>
+  </define-gate>
+  <define-gate name="g185">
+   <or>
+    <event name="e15"/>
+    <event name="e74"/>
+   </or>
+  </define-gate>
+  <define-gate name="g186">
+   <or>
+    <event name="e74"/>
+    <event name="e7"/>
+   </or>
+  </define-gate>
+  <define-gate name="g187">
+   <or>
+    <event name="e74"/>
+    <event name="e11"/>
+   </or>
+  </define-gate>
+  <define-gate name="g188">
+   <or>
+    <event name="e15"/>
+    <event name="e74"/>
+   </or>
+  </define-gate>
+  <define-gate name="g189">
+   <and>
+    <event name="g180"/>
+    <event name="g171"/>
+   </and>
+  </define-gate>
+  <define-gate name="g190">
+   <and>
+    <event name="g181"/>
+    <event name="g172"/>
+   </and>
+  </define-gate>
+  <define-gate name="g191">
+   <and>
+    <event name="g182"/>
+    <event name="g173"/>
+   </and>
+  </define-gate>
+  <define-gate name="g192">
+   <and>
+    <event name="g183"/>
+    <event name="g174"/>
+   </and>
+  </define-gate>
+  <define-gate name="g193">
+   <and>
+    <event name="g184"/>
+    <event name="g175"/>
+   </and>
+  </define-gate>
+  <define-gate name="g194">
+   <and>
+    <event name="g185"/>
+    <event name="g176"/>
+   </and>
+  </define-gate>
+  <define-gate name="g195">
+   <and>
+    <event name="g186"/>
+    <event name="g177"/>
+   </and>
+  </define-gate>
+  <define-gate name="g196">
+   <and>
+    <event name="g187"/>
+    <event name="g178"/>
+   </and>
+  </define-gate>
+  <define-gate name="g197">
+   <and>
+    <event name="g188"/>
+    <event name="g179"/>
+   </and>
+  </define-gate>
+  <define-gate name="g198">
+   <atleast min="2">
+    <event name="g200"/>
+    <event name="g201"/>
+    <event name="g202"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g199">
+   <and>
+    <event name="g203"/>
+    <event name="g204"/>
+   </and>
+  </define-gate>
+  <define-gate name="g200">
+   <or>
+    <event name="g244"/>
+    <event name="e117"/>
+   </or>
+  </define-gate>
+  <define-gate name="g201">
+   <or>
+    <event name="g245"/>
+    <event name="e120"/>
+   </or>
+  </define-gate>
+  <define-gate name="g202">
+   <or>
+    <event name="g243"/>
+    <event name="e114"/>
+   </or>
+  </define-gate>
+  <define-gate name="g203">
+   <or>
+    <event name="e75"/>
+    <event name="e76"/>
+   </or>
+  </define-gate>
+  <define-gate name="g204">
+   <or>
+    <event name="e93"/>
+    <event name="e94"/>
+   </or>
+  </define-gate>
+  <define-gate name="g205">
+   <atleast min="2">
+    <event name="g207"/>
+    <event name="g208"/>
+    <event name="g209"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g206">
+   <and>
+    <event name="g210"/>
+    <event name="g211"/>
+   </and>
+  </define-gate>
+  <define-gate name="g207">
+   <or>
+    <event name="g244"/>
+    <event name="e118"/>
+   </or>
+  </define-gate>
+  <define-gate name="g208">
+   <or>
+    <event name="g245"/>
+    <event name="e121"/>
+   </or>
+  </define-gate>
+  <define-gate name="g209">
+   <or>
+    <event name="g243"/>
+    <event name="e115"/>
+   </or>
+  </define-gate>
+  <define-gate name="g210">
+   <or>
+    <event name="e77"/>
+    <event name="e78"/>
+   </or>
+  </define-gate>
+  <define-gate name="g211">
+   <or>
+    <event name="e95"/>
+    <event name="e96"/>
+   </or>
+  </define-gate>
+  <define-gate name="g212">
+   <atleast min="2">
+    <event name="g214"/>
+    <event name="g215"/>
+    <event name="g216"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g213">
+   <and>
+    <event name="g217"/>
+    <event name="g218"/>
+   </and>
+  </define-gate>
+  <define-gate name="g214">
+   <or>
+    <event name="e119"/>
+    <event name="g244"/>
+   </or>
+  </define-gate>
+  <define-gate name="g215">
+   <or>
+    <event name="e122"/>
+    <event name="g245"/>
+   </or>
+  </define-gate>
+  <define-gate name="g216">
+   <or>
+    <event name="e116"/>
+    <event name="g243"/>
+   </or>
+  </define-gate>
+  <define-gate name="g217">
+   <or>
+    <event name="e79"/>
+    <event name="e80"/>
+   </or>
+  </define-gate>
+  <define-gate name="g218">
+   <or>
+    <event name="e97"/>
+    <event name="e98"/>
+   </or>
+  </define-gate>
+  <define-gate name="g219">
+   <atleast min="2">
+    <event name="g200"/>
+    <event name="g201"/>
+    <event name="g202"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g220">
+   <and>
+    <event name="g221"/>
+    <event name="g222"/>
+   </and>
+  </define-gate>
+  <define-gate name="g221">
+   <or>
+    <event name="e81"/>
+    <event name="e82"/>
+   </or>
+  </define-gate>
+  <define-gate name="g222">
+   <or>
+    <event name="e99"/>
+    <event name="e100"/>
+   </or>
+  </define-gate>
+  <define-gate name="g223">
+   <atleast min="2">
+    <event name="g207"/>
+    <event name="g208"/>
+    <event name="g209"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g224">
+   <and>
+    <event name="g225"/>
+    <event name="g226"/>
+   </and>
+  </define-gate>
+  <define-gate name="g225">
+   <or>
+    <event name="e83"/>
+    <event name="e84"/>
+   </or>
+  </define-gate>
+  <define-gate name="g226">
+   <or>
+    <event name="e101"/>
+    <event name="e102"/>
+   </or>
+  </define-gate>
+  <define-gate name="g227">
+   <atleast min="2">
+    <event name="g214"/>
+    <event name="g215"/>
+    <event name="g216"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g228">
+   <and>
+    <event name="g229"/>
+    <event name="g230"/>
+   </and>
+  </define-gate>
+  <define-gate name="g229">
+   <or>
+    <event name="e85"/>
+    <event name="e86"/>
+   </or>
+  </define-gate>
+  <define-gate name="g230">
+   <or>
+    <event name="e103"/>
+    <event name="e104"/>
+   </or>
+  </define-gate>
+  <define-gate name="g231">
+   <atleast min="2">
+    <event name="g200"/>
+    <event name="g201"/>
+    <event name="g202"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g232">
+   <and>
+    <event name="g233"/>
+    <event name="g234"/>
+   </and>
+  </define-gate>
+  <define-gate name="g233">
+   <or>
+    <event name="e87"/>
+    <event name="e88"/>
+   </or>
+  </define-gate>
+  <define-gate name="g234">
+   <or>
+    <event name="e105"/>
+    <event name="e106"/>
+   </or>
+  </define-gate>
+  <define-gate name="g235">
+   <atleast min="2">
+    <event name="g207"/>
+    <event name="g208"/>
+    <event name="g209"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g236">
+   <and>
+    <event name="g237"/>
+    <event name="g238"/>
+   </and>
+  </define-gate>
+  <define-gate name="g237">
+   <or>
+    <event name="e89"/>
+    <event name="e90"/>
+   </or>
+  </define-gate>
+  <define-gate name="g238">
+   <or>
+    <event name="e107"/>
+    <event name="e108"/>
+   </or>
+  </define-gate>
+  <define-gate name="g239">
+   <and>
+    <event name="g241"/>
+    <event name="g242"/>
+   </and>
+  </define-gate>
+  <define-gate name="g240">
+   <atleast min="2">
+    <event name="g214"/>
+    <event name="g215"/>
+    <event name="g216"/>
+   </atleast>
+  </define-gate>
+  <define-gate name="g241">
+   <or>
+    <event name="e91"/>
+    <event name="e92"/>
+   </or>
+  </define-gate>
+  <define-gate name="g242">
+   <or>
+    <event name="e109"/>
+    <event name="e110"/>
+   </or>
+  </define-gate>
+  <define-gate name="g243">
+   <or>
+    <event name="e16"/>
+    <event name="e17"/>
+    <event name="e111"/>
+   </or>
+  </define-gate>
+  <define-gate name="g244">
+   <or>
+    <event name="e18"/>
+    <event name="e19"/>
+    <event name="e112"/>
+   </or>
+  </define-gate>
+  <define-gate name="g245">
+   <or>
+    <event name="e4"/>
+    <event name="e25"/>
+    <event name="e113"/>
+   </or>
+  </define-gate>
+  <define-gate name="g246">
+   <or>
+    <event name="g40"/>
+    <event name="g67"/>
+   </or>
+  </define-gate>
+  <define-gate name="g247">
+   <or>
+    <event name="g42"/>
+    <event name="g77"/>
+   </or>
+  </define-gate>
+  <define-gate name="g248">
+   <or>
+    <event name="g40"/>
+    <event name="g82"/>
+   </or>
+  </define-gate>
+  <define-gate name="g249">
+   <or>
+    <event name="g42"/>
+    <event name="g92"/>
+   </or>
+  </define-gate>
+  <define-gate name="g250">
+   <or>
+    <event name="g42"/>
+    <event name="g97"/>
+   </or>
+  </define-gate>
+  <define-gate name="g251">
+   <or>
+    <event name="g40"/>
+    <event name="g107"/>
+   </or>
+  </define-gate>
+  <define-gate name="g252">
+   <or>
+    <event name="g42"/>
+    <event name="g112"/>
+   </or>
+  </define-gate>
+  <define-gate name="g253">
+   <or>
+    <event name="g40"/>
+    <event name="g122"/>
+   </or>
+  </define-gate>
+  <define-gate name="g254">
+   <and>
+    <event name="g72"/>
+    <event name="g67"/>
+   </and>
+  </define-gate>
+  <define-gate name="g255">
+   <and>
+    <event name="g87"/>
+    <event name="g82"/>
+   </and>
+  </define-gate>
+  <define-gate name="g256">
+   <and>
+    <event name="g97"/>
+    <event name="g102"/>
+   </and>
+  </define-gate>
+  <define-gate name="g257">
+   <and>
+    <event name="g112"/>
+    <event name="g117"/>
+   </and>
+  </define-gate>
+  <define-gate name="g258">
+   <and>
+    <event name="g3"/>
+    <event name="g40"/>
+   </and>
+  </define-gate>
+  <define-gate name="g259">
+   <and>
+    <event name="g42"/>
+    <event name="g3"/>
+   </and>
+  </define-gate>
+  <define-gate name="g260">
+   <or>
+    <event name="e16"/>
+    <event name="g258"/>
+    <event name="g254"/>
+   </or>
+  </define-gate>
+  <define-gate name="g261">
+   <or>
+    <event name="e16"/>
+    <event name="g258"/>
+    <event name="g255"/>
+   </or>
+  </define-gate>
+  <define-gate name="g262">
+   <or>
+    <event name="e18"/>
+    <event name="g259"/>
+    <event name="g256"/>
+   </or>
+  </define-gate>
+  <define-gate name="g263">
+   <or>
+    <event name="e18"/>
+    <event name="g259"/>
+    <event name="g257"/>
+   </or>
+  </define-gate>
+  <define-gate name="g264">
+   <or>
+    <event name="g275"/>
+    <event name="g274"/>
+   </or>
+  </define-gate>
+  <define-gate name="g265">
+   <or>
+    <event name="g272"/>
+    <event name="g273"/>
+   </or>
+  </define-gate>
+  <define-gate name="g266">
+   <or>
+    <event name="g279"/>
+    <event name="g278"/>
+   </or>
+  </define-gate>
+  <define-gate name="g267">
+   <or>
+    <event name="g276"/>
+    <event name="g277"/>
+   </or>
+  </define-gate>
+  <define-gate name="g268">
+   <or>
+    <event name="g283"/>
+    <event name="g282"/>
+   </or>
+  </define-gate>
+  <define-gate name="g269">
+   <or>
+    <event name="g280"/>
+    <event name="g281"/>
+   </or>
+  </define-gate>
+  <define-gate name="g270">
+   <or>
+    <event name="g287"/>
+    <event name="g286"/>
+   </or>
+  </define-gate>
+  <define-gate name="g271">
+   <or>
+    <event name="g284"/>
+    <event name="g285"/>
+   </or>
+  </define-gate>
+  <define-gate name="g272">
+   <and>
+    <event name="g39"/>
+    <event name="g68"/>
+    <event name="g69"/>
+   </and>
+  </define-gate>
+  <define-gate name="g273">
+   <and>
+    <event name="g246"/>
+    <event name="g73"/>
+    <event name="g74"/>
+   </and>
+  </define-gate>
+  <define-gate name="g274">
+   <and>
+    <event name="g78"/>
+    <event name="g79"/>
+    <event name="g260"/>
+   </and>
+  </define-gate>
+  <define-gate name="g275">
+   <and>
+    <event name="g73"/>
+    <event name="g74"/>
+    <event name="g260"/>
+    <event name="g247"/>
+   </and>
+  </define-gate>
+  <define-gate name="g276">
+   <and>
+    <event name="g39"/>
+    <event name="g83"/>
+    <event name="g84"/>
+   </and>
+  </define-gate>
+  <define-gate name="g277">
+   <and>
+    <event name="g248"/>
+    <event name="g88"/>
+    <event name="g89"/>
+   </and>
+  </define-gate>
+  <define-gate name="g278">
+   <and>
+    <event name="g93"/>
+    <event name="g94"/>
+    <event name="g261"/>
+   </and>
+  </define-gate>
+  <define-gate name="g279">
+   <and>
+    <event name="g88"/>
+    <event name="g89"/>
+    <event name="g261"/>
+    <event name="g249"/>
+   </and>
+  </define-gate>
+  <define-gate name="g280">
+   <and>
+    <event name="g41"/>
+    <event name="g98"/>
+    <event name="g99"/>
+   </and>
+  </define-gate>
+  <define-gate name="g281">
+   <and>
+    <event name="g250"/>
+    <event name="g103"/>
+    <event name="g104"/>
+   </and>
+  </define-gate>
+  <define-gate name="g282">
+   <and>
+    <event name="g108"/>
+    <event name="g109"/>
+    <event name="g262"/>
+   </and>
+  </define-gate>
+  <define-gate name="g283">
+   <and>
+    <event name="g103"/>
+    <event name="g104"/>
+    <event name="g262"/>
+    <event name="g251"/>
+   </and>
+  </define-gate>
+  <define-gate name="g284">
+   <and>
+    <event name="g41"/>
+    <event name="g113"/>
+    <event name="g114"/>
+   </and>
+  </define-gate>
+  <define-gate name="g285">
+   <and>
+    <event name="g252"/>
+    <event name="g118"/>
+    <event name="g119"/>
+   </and>
+  </define-gate>
+  <define-gate name="g286">
+   <and>
+    <event name="g123"/>
+    <event name="g263"/>
+    <event name="g124"/>
+   </and>
+  </define-gate>
+  <define-gate name="g287">
+   <and>
+    <event name="g118"/>
+    <event name="g119"/>
+    <event name="g263"/>
+    <event name="g253"/>
+   </and>
+  </define-gate>
+  <define-gate name="r1">
+   <and>
+    <event name="g161"/>
+    <event name="g145"/>
+   </and>
+  </define-gate>
+ </define-fault-tree>
+</open-psa>

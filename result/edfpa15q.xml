@@ -1,0 +1,1296 @@
+<?xml version="1.0" ?>
+<open-psa>
+ <define-fault-tree name="r1">
+  <define-gate name="r1">
+   <or>
+    <event name="MOD0"/>
+    <event name="INT0042"/>
+    <event name="INT0044"/>
+   </or>
+  </define-gate>
+  <define-gate name="g10">
+   <or>
+    <event name="MOD31"/>
+    <event name="MOD32"/>
+    <event name="g127"/>
+    <event name="g229"/>
+   </or>
+  </define-gate>
+  <define-gate name="g20">
+   <and>
+    <event name="g19"/>
+    <event name="e2"/>
+   </and>
+  </define-gate>
+  <define-gate name="g11">
+   <or>
+    <event name="MOD36"/>
+    <event name="MOD37"/>
+    <event name="g143"/>
+    <event name="g234"/>
+   </or>
+  </define-gate>
+  <define-gate name="g40">
+   <and>
+    <event name="g44"/>
+    <event name="g45"/>
+    <event name="g46"/>
+    <event name="g47"/>
+   </and>
+  </define-gate>
+  <define-gate name="g22">
+   <and>
+    <event name="g23"/>
+    <event name="e3"/>
+   </and>
+  </define-gate>
+  <define-gate name="g13">
+   <or>
+    <event name="MOD44"/>
+    <event name="MOD32"/>
+    <event name="MOD4"/>
+    <event name="MOD37"/>
+    <event name="MOD9"/>
+    <event name="g244"/>
+    <event name="INT0021"/>
+    <event name="INT0023"/>
+   </or>
+  </define-gate>
+  <define-gate name="g23">
+   <and>
+    <event name="MOD24"/>
+   </and>
+  </define-gate>
+  <define-gate name="g25">
+   <and>
+    <event name="MOD20"/>
+   </and>
+  </define-gate>
+  <define-gate name="g16">
+   <and>
+    <event name="g17"/>
+    <event name="e1"/>
+   </and>
+  </define-gate>
+  <define-gate name="g62">
+   <or>
+    <event name="e59"/>
+    <event name="e58"/>
+   </or>
+  </define-gate>
+  <define-gate name="g44">
+   <or>
+    <event name="e39"/>
+    <event name="e38"/>
+   </or>
+  </define-gate>
+  <define-gate name="g26">
+   <and>
+    <event name="g25"/>
+    <event name="e4"/>
+   </and>
+  </define-gate>
+  <define-gate name="g17">
+   <and>
+    <event name="MOD42"/>
+   </and>
+  </define-gate>
+  <define-gate name="g90">
+   <or>
+    <event name="e64"/>
+    <event name="e58"/>
+   </or>
+  </define-gate>
+  <define-gate name="g63">
+   <or>
+    <event name="e60"/>
+    <event name="e40"/>
+   </or>
+  </define-gate>
+  <define-gate name="g45">
+   <or>
+    <event name="e41"/>
+    <event name="e40"/>
+   </or>
+  </define-gate>
+  <define-gate name="g91">
+   <or>
+    <event name="e65"/>
+    <event name="e40"/>
+   </or>
+  </define-gate>
+  <define-gate name="g82">
+   <or>
+    <event name="e51"/>
+    <event name="e38"/>
+   </or>
+  </define-gate>
+  <define-gate name="g46">
+   <and>
+    <event name="MOD19"/>
+   </and>
+  </define-gate>
+  <define-gate name="g19">
+   <and>
+    <event name="MOD40"/>
+   </and>
+  </define-gate>
+  <define-gate name="g83">
+   <or>
+    <event name="e52"/>
+    <event name="e40"/>
+   </or>
+  </define-gate>
+  <define-gate name="g47">
+   <and>
+    <event name="MOD17"/>
+   </and>
+  </define-gate>
+  <define-gate name="g58">
+   <and>
+    <event name="g46"/>
+    <event name="g47"/>
+    <event name="g62"/>
+    <event name="g63"/>
+   </and>
+  </define-gate>
+  <define-gate name="g86">
+   <and>
+    <event name="g46"/>
+    <event name="g47"/>
+    <event name="g90"/>
+    <event name="g91"/>
+   </and>
+  </define-gate>
+  <define-gate name="g96">
+   <and>
+    <event name="g47"/>
+    <event name="g98"/>
+   </and>
+  </define-gate>
+  <define-gate name="g78">
+   <and>
+    <event name="g46"/>
+    <event name="g47"/>
+    <event name="g82"/>
+    <event name="g83"/>
+   </and>
+  </define-gate>
+  <define-gate name="g98">
+   <and>
+    <event name="MOD29"/>
+   </and>
+  </define-gate>
+  <define-gate name="CTN0002">
+   <and>
+    <event name="g176"/>
+    <event name="CTN0003"/>
+   </and>
+  </define-gate>
+  <define-gate name="CTN0003">
+   <or>
+    <event name="MOD11"/>
+    <event name="MOD12"/>
+    <event name="MOD13"/>
+    <event name="MOD14"/>
+    <event name="g117"/>
+    <event name="g135"/>
+    <event name="INT0033"/>
+    <event name="CTN0248"/>
+    <event name="e245"/>
+    <event name="e240"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0040">
+   <or>
+    <event name="MOD14"/>
+    <event name="MOD15"/>
+    <event name="g96"/>
+    <event name="g117"/>
+    <event name="e240"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0022">
+   <and>
+    <event name="g176"/>
+    <event name="CTN0023"/>
+   </and>
+  </define-gate>
+  <define-gate name="CTN0023">
+   <or>
+    <event name="MOD10"/>
+    <event name="MOD11"/>
+    <event name="MOD12"/>
+    <event name="MOD13"/>
+    <event name="MOD14"/>
+    <event name="MOD15"/>
+    <event name="g117"/>
+    <event name="g135"/>
+    <event name="INT0015"/>
+    <event name="INT0033"/>
+    <event name="e245"/>
+    <event name="e240"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0005">
+   <and>
+    <event name="g203"/>
+    <event name="CTN0006"/>
+   </and>
+  </define-gate>
+  <define-gate name="CTN0411">
+   <or>
+    <event name="MOD20"/>
+    <event name="MOD21"/>
+    <event name="MOD22"/>
+    <event name="MOD23"/>
+    <event name="g22"/>
+    <event name="g58"/>
+    <event name="e71"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0006">
+   <or>
+    <event name="MOD24"/>
+    <event name="MOD25"/>
+    <event name="MOD26"/>
+    <event name="MOD27"/>
+    <event name="MOD28"/>
+    <event name="g26"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0251">
+   <and>
+    <event name="CTN0268"/>
+    <event name="CTN0411"/>
+   </and>
+  </define-gate>
+  <define-gate name="CTN0035">
+   <and>
+    <event name="CTN0036"/>
+    <event name="CTN0040"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0011">
+   <and>
+    <event name="INT0008"/>
+    <event name="INT0009"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0002">
+   <or>
+    <event name="MOD25"/>
+    <event name="MOD10"/>
+    <event name="MOD15"/>
+    <event name="MOD1"/>
+    <event name="MOD30"/>
+    <event name="MOD2"/>
+    <event name="g78"/>
+    <event name="INT0019"/>
+    <event name="INT0025"/>
+    <event name="INT0028"/>
+    <event name="e71"/>
+    <event name="e46"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0261">
+   <and>
+    <event name="CTN0245"/>
+    <event name="CTN0268"/>
+   </and>
+  </define-gate>
+  <define-gate name="CTN0036">
+   <or>
+    <event name="MOD10"/>
+    <event name="MOD11"/>
+    <event name="MOD12"/>
+    <event name="MOD13"/>
+    <event name="g86"/>
+    <event name="g135"/>
+    <event name="CTN0005"/>
+    <event name="e245"/>
+   </or>
+  </define-gate>
+  <define-gate name="INT0021">
+   <and>
+    <event name="g196"/>
+    <event name="g175"/>
+   </and>
+  </define-gate>
+  <define-gate name="CTN0145">
+   <and>
+    <event name="g189"/>
+    <event name="CTN0146"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0013">
+   <and>
+    <event name="g186"/>
+    <event name="g176"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0004">
+   <or>
+    <event name="MOD31"/>
+    <event name="MOD3"/>
+    <event name="MOD32"/>
+    <event name="MOD4"/>
+    <event name="MOD5"/>
+    <event name="g127"/>
+    <event name="INT0013"/>
+    <event name="INT0037"/>
+    <event name="CTN0145"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0245">
+   <or>
+    <event name="MOD20"/>
+    <event name="MOD21"/>
+    <event name="MOD22"/>
+    <event name="MOD23"/>
+    <event name="g22"/>
+    <event name="g58"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0146">
+   <or>
+    <event name="MOD11"/>
+    <event name="MOD12"/>
+    <event name="MOD13"/>
+    <event name="g86"/>
+    <event name="g135"/>
+    <event name="CTN0261"/>
+    <event name="e245"/>
+   </or>
+  </define-gate>
+  <define-gate name="INT0023">
+   <and>
+    <event name="g198"/>
+    <event name="g199"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0042">
+   <and>
+    <event name="g9"/>
+    <event name="INT0006"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0033">
+   <and>
+    <event name="g47"/>
+    <event name="INT0034"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0015">
+   <and>
+    <event name="g203"/>
+    <event name="g204"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0006">
+   <or>
+    <event name="MOD25"/>
+    <event name="MOD10"/>
+    <event name="MOD15"/>
+    <event name="MOD30"/>
+    <event name="g78"/>
+    <event name="INT0011"/>
+    <event name="INT0019"/>
+    <event name="e71"/>
+    <event name="e46"/>
+   </or>
+  </define-gate>
+  <define-gate name="INT0034">
+   <or>
+    <event name="MOD29"/>
+    <event name="INT0036"/>
+   </or>
+  </define-gate>
+  <define-gate name="INT0025">
+   <and>
+    <event name="g10"/>
+    <event name="INT0026"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0044">
+   <and>
+    <event name="g13"/>
+    <event name="INT0002"/>
+   </and>
+  </define-gate>
+  <define-gate name="CTN0248">
+   <and>
+    <event name="CTN0245"/>
+    <event name="CTN0249"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0026">
+   <or>
+    <event name="MOD3"/>
+    <event name="MOD4"/>
+    <event name="MOD5"/>
+    <event name="g239"/>
+    <event name="INT0017"/>
+    <event name="CTN0002"/>
+   </or>
+  </define-gate>
+  <define-gate name="INT0017">
+   <and>
+    <event name="g188"/>
+    <event name="g189"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0008">
+   <or>
+    <event name="MOD1"/>
+    <event name="MOD31"/>
+    <event name="MOD32"/>
+    <event name="g127"/>
+    <event name="g229"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0249">
+   <or>
+    <event name="MOD24"/>
+    <event name="MOD26"/>
+    <event name="MOD27"/>
+    <event name="MOD28"/>
+    <event name="g26"/>
+    <event name="g86"/>
+   </or>
+  </define-gate>
+  <define-gate name="INT0036">
+   <and>
+    <event name="g46"/>
+    <event name="g90"/>
+    <event name="g91"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0009">
+   <or>
+    <event name="MOD2"/>
+    <event name="MOD36"/>
+    <event name="MOD37"/>
+    <event name="g143"/>
+    <event name="g234"/>
+   </or>
+  </define-gate>
+  <define-gate name="CTN0268">
+   <or>
+    <event name="MOD24"/>
+    <event name="MOD26"/>
+    <event name="MOD27"/>
+    <event name="MOD28"/>
+    <event name="g26"/>
+   </or>
+  </define-gate>
+  <define-gate name="INT0037">
+   <and>
+    <event name="INT0038"/>
+    <event name="e254"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0028">
+   <and>
+    <event name="g11"/>
+    <event name="INT0004"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0019">
+   <and>
+    <event name="g201"/>
+    <event name="g202"/>
+   </and>
+  </define-gate>
+  <define-gate name="INT0038">
+   <or>
+    <event name="MOD34"/>
+    <event name="MOD6"/>
+    <event name="MOD35"/>
+    <event name="MOD7"/>
+    <event name="MOD8"/>
+    <event name="e271"/>
+    <event name="e270"/>
+    <event name="e265"/>
+    <event name="e263"/>
+    <event name="e262"/>
+    <event name="e261"/>
+    <event name="e260"/>
+   </or>
+  </define-gate>
+  <define-gate name="g120">
+   <and>
+    <event name="g47"/>
+    <event name="g158"/>
+   </and>
+  </define-gate>
+  <define-gate name="g201">
+   <or>
+    <event name="MOD21"/>
+    <event name="MOD26"/>
+    <event name="MOD40"/>
+    <event name="MOD41"/>
+    <event name="MOD11"/>
+    <event name="g16"/>
+    <event name="g40"/>
+   </or>
+  </define-gate>
+  <define-gate name="g130">
+   <and>
+    <event name="g46"/>
+    <event name="g47"/>
+    <event name="g133"/>
+    <event name="g134"/>
+   </and>
+  </define-gate>
+  <define-gate name="g202">
+   <or>
+    <event name="MOD22"/>
+    <event name="MOD27"/>
+    <event name="MOD42"/>
+    <event name="MOD43"/>
+    <event name="MOD12"/>
+    <event name="g20"/>
+   </or>
+  </define-gate>
+  <define-gate name="g230">
+   <or>
+    <event name="MOD34"/>
+    <event name="MOD6"/>
+    <event name="MOD35"/>
+    <event name="e265"/>
+    <event name="e263"/>
+    <event name="e262"/>
+    <event name="e261"/>
+    <event name="e260"/>
+   </or>
+  </define-gate>
+  <define-gate name="g122">
+   <and>
+    <event name="g123"/>
+    <event name="e127"/>
+   </and>
+  </define-gate>
+  <define-gate name="g203">
+   <or>
+    <event name="MOD20"/>
+    <event name="MOD21"/>
+    <event name="MOD22"/>
+    <event name="MOD23"/>
+    <event name="g22"/>
+    <event name="g58"/>
+    <event name="e71"/>
+    <event name="e46"/>
+   </or>
+  </define-gate>
+  <define-gate name="g240">
+   <or>
+    <event name="MOD6"/>
+    <event name="MOD7"/>
+    <event name="MOD8"/>
+    <event name="e271"/>
+    <event name="e270"/>
+    <event name="e265"/>
+    <event name="e262"/>
+    <event name="e261"/>
+   </or>
+  </define-gate>
+  <define-gate name="g123">
+   <or>
+    <event name="MOD46"/>
+    <event name="g125"/>
+   </or>
+  </define-gate>
+  <define-gate name="g204">
+   <or>
+    <event name="MOD24"/>
+    <event name="MOD25"/>
+    <event name="MOD26"/>
+    <event name="MOD27"/>
+    <event name="MOD28"/>
+    <event name="g26"/>
+    <event name="g86"/>
+   </or>
+  </define-gate>
+  <define-gate name="g151">
+   <and>
+    <event name="g152"/>
+    <event name="e141"/>
+   </and>
+  </define-gate>
+  <define-gate name="g133">
+   <or>
+    <event name="e139"/>
+    <event name="e138"/>
+   </or>
+  </define-gate>
+  <define-gate name="g152">
+   <or>
+    <event name="MOD47"/>
+    <event name="g146"/>
+   </or>
+  </define-gate>
+  <define-gate name="g143">
+   <and>
+    <event name="g144"/>
+    <event name="e135"/>
+   </and>
+  </define-gate>
+  <define-gate name="g134">
+   <or>
+    <event name="e140"/>
+    <event name="e130"/>
+   </or>
+  </define-gate>
+  <define-gate name="g125">
+   <and>
+    <event name="g47"/>
+    <event name="g126"/>
+   </and>
+  </define-gate>
+  <define-gate name="g234">
+   <and>
+    <event name="g235"/>
+    <event name="e254"/>
+   </and>
+  </define-gate>
+  <define-gate name="g144">
+   <or>
+    <event name="MOD38"/>
+    <event name="g146"/>
+   </or>
+  </define-gate>
+  <define-gate name="g135">
+   <and>
+    <event name="g136"/>
+    <event name="e141"/>
+   </and>
+  </define-gate>
+  <define-gate name="g126">
+   <or>
+    <event name="e134"/>
+    <event name="e130"/>
+   </or>
+  </define-gate>
+  <define-gate name="g117">
+   <and>
+    <event name="g118"/>
+    <event name="e127"/>
+   </and>
+  </define-gate>
+  <define-gate name="g235">
+   <or>
+    <event name="MOD34"/>
+    <event name="MOD6"/>
+    <event name="MOD39"/>
+    <event name="e272"/>
+    <event name="e271"/>
+    <event name="e270"/>
+    <event name="e262"/>
+    <event name="e260"/>
+   </or>
+  </define-gate>
+  <define-gate name="g244">
+   <and>
+    <event name="g245"/>
+    <event name="e254"/>
+   </and>
+  </define-gate>
+  <define-gate name="g136">
+   <or>
+    <event name="MOD18"/>
+    <event name="g130"/>
+   </or>
+  </define-gate>
+  <define-gate name="g127">
+   <and>
+    <event name="g128"/>
+    <event name="e135"/>
+   </and>
+  </define-gate>
+  <define-gate name="g118">
+   <or>
+    <event name="MOD16"/>
+    <event name="g120"/>
+   </or>
+  </define-gate>
+  <define-gate name="g245">
+   <or>
+    <event name="MOD45"/>
+    <event name="MOD6"/>
+    <event name="MOD7"/>
+    <event name="e272"/>
+    <event name="e270"/>
+    <event name="e263"/>
+    <event name="e261"/>
+    <event name="e260"/>
+   </or>
+  </define-gate>
+  <define-gate name="g146">
+   <and>
+    <event name="g46"/>
+    <event name="g47"/>
+    <event name="g149"/>
+    <event name="g158"/>
+   </and>
+  </define-gate>
+  <define-gate name="g128">
+   <or>
+    <event name="MOD33"/>
+    <event name="g130"/>
+   </or>
+  </define-gate>
+  <define-gate name="g229">
+   <and>
+    <event name="g230"/>
+    <event name="e254"/>
+   </and>
+  </define-gate>
+  <define-gate name="g175">
+   <and>
+    <event name="MOD5"/>
+   </and>
+  </define-gate>
+  <define-gate name="g9">
+   <or>
+    <event name="MOD1"/>
+    <event name="MOD2"/>
+    <event name="MOD3"/>
+    <event name="MOD4"/>
+    <event name="MOD5"/>
+    <event name="g239"/>
+    <event name="CTN0022"/>
+    <event name="CTN0035"/>
+   </or>
+  </define-gate>
+  <define-gate name="g239">
+   <and>
+    <event name="g240"/>
+    <event name="e254"/>
+   </and>
+  </define-gate>
+  <define-gate name="g158">
+   <or>
+    <event name="e131"/>
+    <event name="e130"/>
+   </or>
+  </define-gate>
+  <define-gate name="g149">
+   <or>
+    <event name="e146"/>
+    <event name="e138"/>
+   </or>
+  </define-gate>
+  <define-gate name="g176">
+   <and>
+    <event name="MOD9"/>
+   </and>
+  </define-gate>
+  <define-gate name="g186">
+   <or>
+    <event name="MOD11"/>
+    <event name="MOD12"/>
+    <event name="MOD13"/>
+    <event name="MOD14"/>
+    <event name="g117"/>
+    <event name="g135"/>
+    <event name="g239"/>
+    <event name="INT0033"/>
+    <event name="CTN0248"/>
+    <event name="e245"/>
+    <event name="e240"/>
+   </or>
+  </define-gate>
+  <define-gate name="g196">
+   <or>
+    <event name="MOD10"/>
+    <event name="MOD11"/>
+    <event name="MOD12"/>
+    <event name="MOD13"/>
+    <event name="MOD14"/>
+    <event name="MOD15"/>
+    <event name="g122"/>
+    <event name="g151"/>
+    <event name="INT0015"/>
+    <event name="INT0033"/>
+    <event name="e248"/>
+    <event name="e242"/>
+   </or>
+  </define-gate>
+  <define-gate name="g188">
+   <or>
+    <event name="MOD11"/>
+    <event name="MOD12"/>
+    <event name="MOD13"/>
+    <event name="g86"/>
+    <event name="g135"/>
+    <event name="CTN0251"/>
+    <event name="e245"/>
+   </or>
+  </define-gate>
+  <define-gate name="g198">
+   <or>
+    <event name="MOD14"/>
+    <event name="MOD15"/>
+    <event name="g96"/>
+    <event name="g122"/>
+    <event name="e242"/>
+   </or>
+  </define-gate>
+  <define-gate name="g189">
+   <or>
+    <event name="MOD14"/>
+    <event name="g96"/>
+    <event name="g117"/>
+    <event name="e240"/>
+   </or>
+  </define-gate>
+  <define-gate name="g199">
+   <or>
+    <event name="MOD10"/>
+    <event name="MOD11"/>
+    <event name="MOD12"/>
+    <event name="MOD13"/>
+    <event name="g86"/>
+    <event name="g151"/>
+    <event name="CTN0005"/>
+    <event name="e248"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD47">
+   <or>
+    <event name="e147"/>
+    <event name="e148"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD46">
+   <or>
+    <event name="e132"/>
+    <event name="e133"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD45">
+   <or>
+    <event name="e282"/>
+    <event name="e283"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD44">
+   <or>
+    <event name="e21"/>
+    <event name="e36"/>
+    <event name="e230"/>
+    <event name="e280"/>
+    <event name="e281"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD43">
+   <or>
+    <event name="e50"/>
+    <event name="e53"/>
+    <event name="e75"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD42">
+   <or>
+    <event name="e189"/>
+    <event name="e190"/>
+    <event name="e191"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD41">
+   <or>
+    <event name="e37"/>
+    <event name="e42"/>
+    <event name="e67"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD40">
+   <or>
+    <event name="e186"/>
+    <event name="e187"/>
+    <event name="e188"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD39">
+   <or>
+    <event name="e268"/>
+    <event name="e269"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD38">
+   <or>
+    <event name="e144"/>
+    <event name="e145"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD37">
+   <or>
+    <event name="e18"/>
+    <event name="e33"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD36">
+   <or>
+    <event name="e15"/>
+    <event name="e30"/>
+    <event name="e228"/>
+    <event name="e247"/>
+    <event name="e266"/>
+    <event name="e267"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD35">
+   <or>
+    <event name="e257"/>
+    <event name="e258"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD34">
+   <or>
+    <event name="e256"/>
+    <event name="e264"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD33">
+   <or>
+    <event name="e136"/>
+    <event name="e137"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD32">
+   <or>
+    <event name="e12"/>
+    <event name="e27"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD31">
+   <or>
+    <event name="e7"/>
+    <event name="e22"/>
+    <event name="e243"/>
+    <event name="e249"/>
+    <event name="e252"/>
+    <event name="e253"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD30">
+   <or>
+    <event name="e13"/>
+    <event name="e28"/>
+    <event name="e48"/>
+    <event name="e73"/>
+    <event name="e82"/>
+    <event name="e83"/>
+    <event name="e113"/>
+    <event name="e116"/>
+    <event name="e117"/>
+    <event name="e120"/>
+    <event name="e121"/>
+    <event name="e233"/>
+    <event name="e234"/>
+    <event name="e168"/>
+    <event name="e169"/>
+    <event name="e170"/>
+    <event name="e171"/>
+    <event name="e172"/>
+    <event name="e173"/>
+    <event name="e153"/>
+    <event name="e149"/>
+    <event name="e151"/>
+    <event name="e180"/>
+    <event name="e181"/>
+    <event name="e182"/>
+    <event name="e202"/>
+    <event name="e203"/>
+    <event name="e204"/>
+    <event name="e205"/>
+    <event name="e206"/>
+    <event name="e207"/>
+    <event name="e208"/>
+    <event name="e209"/>
+    <event name="e210"/>
+    <event name="e211"/>
+    <event name="e212"/>
+    <event name="e213"/>
+    <event name="e214"/>
+    <event name="e215"/>
+    <event name="e238"/>
+    <event name="e244"/>
+    <event name="e251"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD29">
+   <or>
+    <event name="e107"/>
+    <event name="e108"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD28">
+   <or>
+    <event name="e63"/>
+    <event name="e66"/>
+    <event name="e81"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD27">
+   <or>
+    <event name="e56"/>
+    <event name="e78"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD26">
+   <or>
+    <event name="e47"/>
+    <event name="e72"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD25">
+   <or>
+    <event name="e44"/>
+    <event name="e69"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD24">
+   <or>
+    <event name="e195"/>
+    <event name="e196"/>
+    <event name="e197"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD23">
+   <or>
+    <event name="e57"/>
+    <event name="e61"/>
+    <event name="e79"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD22">
+   <or>
+    <event name="e55"/>
+    <event name="e77"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD21">
+   <or>
+    <event name="e49"/>
+    <event name="e74"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD20">
+   <or>
+    <event name="e192"/>
+    <event name="e193"/>
+    <event name="e194"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD19">
+   <or>
+    <event name="e158"/>
+    <event name="e159"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD18">
+   <or>
+    <event name="e142"/>
+    <event name="e143"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD17">
+   <or>
+    <event name="e160"/>
+    <event name="e161"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD16">
+   <or>
+    <event name="e128"/>
+    <event name="e129"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD15">
+   <or>
+    <event name="e90"/>
+    <event name="e92"/>
+    <event name="e98"/>
+    <event name="e100"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD14">
+   <or>
+    <event name="e87"/>
+    <event name="e94"/>
+    <event name="e95"/>
+    <event name="e102"/>
+    <event name="e103"/>
+    <event name="e104"/>
+    <event name="e105"/>
+    <event name="e106"/>
+    <event name="e109"/>
+    <event name="e110"/>
+    <event name="e111"/>
+    <event name="e112"/>
+    <event name="e231"/>
+    <event name="e232"/>
+    <event name="e162"/>
+    <event name="e163"/>
+    <event name="e164"/>
+    <event name="e167"/>
+    <event name="e237"/>
+    <event name="e241"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD13">
+   <or>
+    <event name="e62"/>
+    <event name="e80"/>
+    <event name="e85"/>
+    <event name="e86"/>
+    <event name="e122"/>
+    <event name="e123"/>
+    <event name="e124"/>
+    <event name="e125"/>
+    <event name="e126"/>
+    <event name="e235"/>
+    <event name="e236"/>
+    <event name="e174"/>
+    <event name="e175"/>
+    <event name="e176"/>
+    <event name="e179"/>
+    <event name="e157"/>
+    <event name="e155"/>
+    <event name="e156"/>
+    <event name="e183"/>
+    <event name="e184"/>
+    <event name="e185"/>
+    <event name="e239"/>
+    <event name="e246"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD12">
+   <or>
+    <event name="e54"/>
+    <event name="e76"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD11">
+   <or>
+    <event name="e45"/>
+    <event name="e70"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD10">
+   <or>
+    <event name="e43"/>
+    <event name="e68"/>
+    <event name="e84"/>
+    <event name="e114"/>
+    <event name="e115"/>
+    <event name="e118"/>
+    <event name="e119"/>
+    <event name="e154"/>
+    <event name="e150"/>
+    <event name="e152"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD9">
+   <or>
+    <event name="e222"/>
+    <event name="e223"/>
+    <event name="e224"/>
+    <event name="e225"/>
+    <event name="e226"/>
+    <event name="e227"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD8">
+   <or>
+    <event name="e277"/>
+    <event name="e278"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD7">
+   <or>
+    <event name="e276"/>
+    <event name="e279"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD6">
+   <or>
+    <event name="e255"/>
+    <event name="e259"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD5">
+   <or>
+    <event name="e216"/>
+    <event name="e217"/>
+    <event name="e218"/>
+    <event name="e219"/>
+    <event name="e220"/>
+    <event name="e221"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD4">
+   <or>
+    <event name="e20"/>
+    <event name="e35"/>
+    <event name="e89"/>
+    <event name="e93"/>
+    <event name="e97"/>
+    <event name="e101"/>
+    <event name="e165"/>
+    <event name="e166"/>
+    <event name="e177"/>
+    <event name="e178"/>
+    <event name="e273"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD3">
+   <or>
+    <event name="e19"/>
+    <event name="e34"/>
+    <event name="e229"/>
+    <event name="e274"/>
+    <event name="e275"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD2">
+   <or>
+    <event name="e17"/>
+    <event name="e32"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD1">
+   <or>
+    <event name="e14"/>
+    <event name="e29"/>
+   </or>
+  </define-gate>
+  <define-gate name="MOD0">
+   <or>
+    <event name="e5"/>
+    <event name="e6"/>
+    <event name="e198"/>
+    <event name="e199"/>
+    <event name="e200"/>
+    <event name="e201"/>
+    <event name="e8"/>
+    <event name="e9"/>
+    <event name="e10"/>
+    <event name="e11"/>
+    <event name="e16"/>
+    <event name="e23"/>
+    <event name="e24"/>
+    <event name="e25"/>
+    <event name="e26"/>
+    <event name="e31"/>
+    <event name="e88"/>
+    <event name="e91"/>
+    <event name="e96"/>
+    <event name="e99"/>
+    <event name="e250"/>
+   </or>
+  </define-gate>
+ </define-fault-tree>
+</open-psa>
