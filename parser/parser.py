@@ -198,9 +198,13 @@ for file_name in file_list:
         reared_content.writexml(fs, addindent=" ", newl="\n")
 
     real_basic_count = 0
+    real_basic_event = set()
     for event in basic_event:
         if event not in root_set:
             real_basic_count += 1
+            real_basic_event.add(event) #确保basic_event不是gate_event
+    basic_event = real_basic_event
+
     num_statistic += file_name[0:len(file_name)-4] + " " + str(real_basic_count) + " " + str(len(root_set)) + "\n"
     basic_open_psa = ET.Element("open-psa")
     basic_define_fault_tree = ET.SubElement(basic_open_psa, "define-fault-tree")
