@@ -4,6 +4,18 @@ import os
 import re
 import subprocess
 import collections
+import xlwt
+
+wb = xlwt.Workbook(encoding = 'ascii')
+ws = wb.add_sheet('My Worksheet')         
+ws.write(0,0,"Benchmark")
+ws.write(0,3,"#Module")
+ws.write(0,4,"#prime imp")
+ws.write(0,5,"Time(s)")
+ws.write(0,6,"Memory(K)")
+xls_line = 0   
+# wb.save('test.xls')  
+
 
 os.system("rm -rf xftar_result")
 os.system("mkdir xftar_result")
@@ -11,12 +23,13 @@ raw = open("script.xml", "r")
 file_context = raw.read()
 root = ET.fromstring(file_context)
 output = ""
-statistic = "Benchmark  #Event  #Gate   #Module #prime imp  Time(s) Memory(K)\n"
+statistic = "Benchmark #Module #prime imp  Time(s) Memory(K)\n"
 
 for roots,dirs,files in os.walk("../raw"):
     break
 
-file_list = ["baobab3.dag",
+file_list = [
+             "baobab3.dag",
              "chinese.dag",
              "das9201.dag",
              "das9202.dag",
@@ -44,8 +57,8 @@ file_list = ["baobab3.dag",
              "jbd9601.dag"
             ]
 
-# for file_name in files:
-for file_name in file_list:
+for file_name in files:
+# for file_name in file_list:
     # file_name = "chinese.dag"
     file_name = file_name[0:len(file_name)-4]
     print(file_name)
@@ -86,13 +99,21 @@ for file_name in file_list:
     line_count = os.popen("wc xftar_result/"+file_name+" -l")
     # basic_event_num.split(" ")[-1] + " " + \
     # gate_num.split(" ")[-1] + " " + \
+    line_tmp = line_count.read().split(" ")[0]
     statistic += file_name+ " " +\
                     module_num.split(" ")[-1] + " " + \
-                    line_count.read().split(" ")[0] + " " + \
+                    line_tmp + " " + \
                     str(float(user_time.split(" ")[-1])+float(system_time.split(" ")[-1])) + " " + \
                     resident_size.split(" ")[-1] + "\n"
+    xls_line += 1
+    ws.write(xls_line, 0, file_name)
+    ws.write(xls_line, 3, module_num.split(" ")[-1])
+    ws.write(xls_line, 4, line_tmp)
+    ws.write(xls_line, 5, str(float(user_time.split(" ")[-1])+float(system_time.split(" ")[-1])))
+    ws.write(xls_line, 6, resident_size.split(" ")[-1])
 
 statistic_file = open("statistic", "w")
 statistic_file.write(statistic)
 statistic_file.close()
+wb.save('statistic.xls')  
 

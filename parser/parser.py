@@ -1,12 +1,20 @@
 import os
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
+import xlwt
 
 operator_tag = {"|":"or", "&":"and", "#":"xor", "-":"not"}
 
+wb = xlwt.Workbook(encoding = 'ascii')
+ws = wb.add_sheet('My Worksheet')         
+ws.write(0,1,"#Event")
+ws.write(0,2,"#Gate")
+xls_line = 0  
+
 for root,dirs,files in os.walk("../raw"):
     break
-file_list = ["baobab3.dag",
+file_list = [
+            "baobab3.dag",
              "chinese.dag",
              "das9201.dag",
              "das9202.dag",
@@ -34,8 +42,8 @@ file_list = ["baobab3.dag",
              "jbd9601.dag"
             ]
 num_statistic = "Benchmark  #Event  #Gate\n"
-# for file_name in files:
-for file_name in file_list:
+for file_name in files:
+# for file_name in file_list:
     print(file_name)
     raw = open("../raw/"+file_name, "r")
     open_psa = ET.Element("open-psa")
@@ -46,6 +54,7 @@ for file_name in file_list:
     not_in_one_line = 0
     last_line = ""
     is_annotation = 0 # 一片注释
+    xo = 0 # 为xor新增加的门
     for line in raw:
         # 处理空行
         if len(line) == 1:
@@ -135,14 +144,28 @@ for file_name in file_list:
                             if event_name[1] != 'g':
                                 basic_event.add(event_name[1:len(event_name)])
                 else: # 临时处理xor(只是两项等)
+                    xo += 1
+                    name1 = "xo"+str(xo)
+                    xo += 1
+                    name2 = "xo"+str(xo)
                     or_gate = ET.SubElement(define_gate, "or")
-                    and_gate_1 = ET.SubElement(or_gate, "and")
+                    xor_gate_1 = ET.SubElement(or_gate, "event")
+                    xor_gate_1.set("name", name1)
+                    xor_gate_2 = ET.SubElement(or_gate, "event")
+                    xor_gate_2.set("name", name2)           
+
+                    define_gate = ET.SubElement(define_fault_tree, "define-gate")
+                    define_gate.set("name", name1)
+                    and_gate_1 = ET.SubElement(define_gate, "and")
                     not_gate_1 = ET.SubElement(and_gate_1, "not")
                     event = ET.SubElement(not_gate_1, "event")
                     event.set("name", cur_list[0])
                     event = ET.SubElement(and_gate_1, "event")
                     event.set("name", cur_list[1])
-                    and_gate_2 = ET.SubElement(or_gate, "and")
+
+                    define_gate = ET.SubElement(define_fault_tree, "define-gate")
+                    define_gate.set("name", name2)
+                    and_gate_2 = ET.SubElement(define_gate, "and")
                     not_gate_2 = ET.SubElement(and_gate_2, "not")
                     event = ET.SubElement(not_gate_2, "event")
                     event.set("name", cur_list[1])
@@ -204,8 +227,12 @@ for file_name in file_list:
             real_basic_count += 1
             real_basic_event.add(event) #确保basic_event不是gate_event
     basic_event = real_basic_event
-
-    num_statistic += file_name[0:len(file_name)-4] + " " + str(real_basic_count) + " " + str(len(root_set)) + "\n"
+    # 包括为xor额外添加的门
+    num_statistic += file_name[0:len(file_name)-4] + " " + str(real_basic_count) + " " + str(len(root_set)+xo) + "\n"
+    xls_line += 1
+    ws.write(xls_line, 0, file_name[0:len(file_name)-4])
+    ws.write(xls_line, 1, str(real_basic_count))
+    ws.write(xls_line, 2, str(len(root_set)+xo))
     basic_open_psa = ET.Element("open-psa")
     basic_define_fault_tree = ET.SubElement(basic_open_psa, "define-fault-tree")
     basic_define_fault_tree.set("name", "test")
@@ -221,6 +248,7 @@ for file_name in file_list:
 
 statistic = open("statistic", "w")
 statistic.write(num_statistic)
+wb.save('statistic.xls') 
 
 
 
