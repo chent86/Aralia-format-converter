@@ -439,10 +439,20 @@
    </and>
   </define-gate>
   <define-gate name="g67">
-   <xor>
-    <event name="g68"/>
-    <event name="g69"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g68"/>
+     </not>
+     <event name="g69"/>
+    </and>
+    <and>
+     <not>
+      <event name="g69"/>
+     </not>
+     <event name="g68"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g68">
    <or>
@@ -471,10 +481,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g72">
-   <xor>
-    <event name="g73"/>
-    <event name="g74"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g73"/>
+     </not>
+     <event name="g74"/>
+    </and>
+    <and>
+     <not>
+      <event name="g74"/>
+     </not>
+     <event name="g73"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g73">
    <or>
@@ -503,10 +523,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g77">
-   <xor>
-    <event name="g78"/>
-    <event name="g79"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g78"/>
+     </not>
+     <event name="g79"/>
+    </and>
+    <and>
+     <not>
+      <event name="g79"/>
+     </not>
+     <event name="g78"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g78">
    <or>
@@ -535,10 +565,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g82">
-   <xor>
-    <event name="g83"/>
-    <event name="g84"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g83"/>
+     </not>
+     <event name="g84"/>
+    </and>
+    <and>
+     <not>
+      <event name="g84"/>
+     </not>
+     <event name="g83"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g83">
    <or>
@@ -567,10 +607,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g87">
-   <xor>
-    <event name="g88"/>
-    <event name="g89"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g88"/>
+     </not>
+     <event name="g89"/>
+    </and>
+    <and>
+     <not>
+      <event name="g89"/>
+     </not>
+     <event name="g88"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g88">
    <or>
@@ -599,10 +649,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g92">
-   <xor>
-    <event name="g93"/>
-    <event name="g94"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g93"/>
+     </not>
+     <event name="g94"/>
+    </and>
+    <and>
+     <not>
+      <event name="g94"/>
+     </not>
+     <event name="g93"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g93">
    <or>
@@ -631,10 +691,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g97">
-   <xor>
-    <event name="g98"/>
-    <event name="g99"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g98"/>
+     </not>
+     <event name="g99"/>
+    </and>
+    <and>
+     <not>
+      <event name="g99"/>
+     </not>
+     <event name="g98"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g98">
    <or>
@@ -663,10 +733,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g102">
-   <xor>
-    <event name="g103"/>
-    <event name="g104"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g103"/>
+     </not>
+     <event name="g104"/>
+    </and>
+    <and>
+     <not>
+      <event name="g104"/>
+     </not>
+     <event name="g103"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g103">
    <or>
@@ -695,10 +775,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g107">
-   <xor>
-    <event name="g108"/>
-    <event name="g109"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g108"/>
+     </not>
+     <event name="g109"/>
+    </and>
+    <and>
+     <not>
+      <event name="g109"/>
+     </not>
+     <event name="g108"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g108">
    <or>
@@ -727,10 +817,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g112">
-   <xor>
-    <event name="g113"/>
-    <event name="g114"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g113"/>
+     </not>
+     <event name="g114"/>
+    </and>
+    <and>
+     <not>
+      <event name="g114"/>
+     </not>
+     <event name="g113"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g113">
    <or>
@@ -759,10 +859,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g117">
-   <xor>
-    <event name="g118"/>
-    <event name="g119"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g118"/>
+     </not>
+     <event name="g119"/>
+    </and>
+    <and>
+     <not>
+      <event name="g119"/>
+     </not>
+     <event name="g118"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g118">
    <or>
@@ -791,10 +901,20 @@
    </atleast>
   </define-gate>
   <define-gate name="g122">
-   <xor>
-    <event name="g123"/>
-    <event name="g124"/>
-   </xor>
+   <or>
+    <and>
+     <not>
+      <event name="g123"/>
+     </not>
+     <event name="g124"/>
+    </and>
+    <and>
+     <not>
+      <event name="g124"/>
+     </not>
+     <event name="g123"/>
+    </and>
+   </or>
   </define-gate>
   <define-gate name="g123">
    <or>

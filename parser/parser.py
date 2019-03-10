@@ -6,13 +6,43 @@ operator_tag = {"|":"or", "&":"and", "#":"xor", "-":"not"}
 
 for root,dirs,files in os.walk("../raw"):
     break
-for file_name in files:
+file_list = ["baobab3.dag",
+             "chinese.dag",
+             "das9201.dag",
+             "das9202.dag",
+             "das9203.dag",
+             "das9204.dag",
+             "das9205.dag",
+             "das9206.dag",
+             "das9207.dag",
+             "das9208.dag",
+             "edf9201.dag",
+             "edf9202.dag",
+             "edf9205.dag",
+             "edfpa14p.dag",
+             "edfpa14r.dag",
+             "edfpa15b.dag",
+             "edfpa15p.dag",
+             "edfpa15r.dag",
+             "elf9601.dag",
+             "ftr10.dag",
+             "isp9602.dag",
+             "isp9603.dag",
+             "isp9604.dag",
+             "isp9606.dag",
+             "isp9607.dag",
+             "jbd9601.dag"
+            ]
+num_statistic = "Benchmark  #Event  #Gate\n"
+# for file_name in files:
+for file_name in file_list:
     print(file_name)
     raw = open("../raw/"+file_name, "r")
     open_psa = ET.Element("open-psa")
     define_fault_tree = ET.SubElement(open_psa, "define-fault-tree")
     top_event = "r1"
     basic_event = set()
+    root_set = set()
     not_in_one_line = 0
     last_line = ""
     is_annotation = 0 # 一片注释
@@ -53,6 +83,7 @@ for file_name in files:
             if line[i] == " " or line[i] == ":":
                 break
             root += line[i]
+        root_set.add(root)
         while i < length-1:
             if line[i] == "=":
                 i = i+1
@@ -87,21 +118,36 @@ for file_name in files:
             define_gate = ET.SubElement(define_fault_tree, "define-gate")
             define_gate.set("name", root)
             if operator != "":
-                gate_type = ET.SubElement(define_gate, operator_tag[operator])
-                for event_name in cur_list:
-                    # if event_name == "":
-                    #     continue
-                    if event_name[0] != '-':
-                        event = ET.SubElement(gate_type, "event")
-                        event.set("name", event_name)
-                        if event_name[0]=='e':
-                            basic_event.add(event_name)
-                    else:
-                        not_gate = ET.SubElement(gate_type, "not")
-                        event = ET.SubElement(not_gate, "event")
-                        event.set("name", event_name[1:len(event_name)])
-                        if event_name[1] == 'e':
-                            basic_event.add(event_name[1:len(event_name)])
+                if operator != "#":
+                    gate_type = ET.SubElement(define_gate, operator_tag[operator])
+                    for event_name in cur_list:
+                        # if event_name == "":
+                        #     continue
+                        if event_name[0] != '-':
+                            event = ET.SubElement(gate_type, "event")
+                            event.set("name", event_name)
+                            if event_name[0]!='g':
+                                basic_event.add(event_name)
+                        else:
+                            not_gate = ET.SubElement(gate_type, "not")
+                            event = ET.SubElement(not_gate, "event")
+                            event.set("name", event_name[1:len(event_name)])
+                            if event_name[1] != 'g':
+                                basic_event.add(event_name[1:len(event_name)])
+                else: # 临时处理xor(只是两项等)
+                    or_gate = ET.SubElement(define_gate, "or")
+                    and_gate_1 = ET.SubElement(or_gate, "and")
+                    not_gate_1 = ET.SubElement(and_gate_1, "not")
+                    event = ET.SubElement(not_gate_1, "event")
+                    event.set("name", cur_list[0])
+                    event = ET.SubElement(and_gate_1, "event")
+                    event.set("name", cur_list[1])
+                    and_gate_2 = ET.SubElement(or_gate, "and")
+                    not_gate_2 = ET.SubElement(and_gate_2, "not")
+                    event = ET.SubElement(not_gate_2, "event")
+                    event.set("name", cur_list[1])
+                    event = ET.SubElement(and_gate_2, "event")
+                    event.set("name", cur_list[0])
         else:
             while i < length:
                 if line[i] == "," or line[i] == " ":
@@ -134,13 +180,13 @@ for file_name in files:
                 if event_name[0] != '-':
                     event = ET.SubElement(gate_type, "event")
                     event.set("name", event_name)
-                    if event_name[0]=='e':
+                    if event_name[0]!='g':
                         basic_event.add(event_name)
                 else:
                     not_gate = ET.SubElement(gate_type, "not")
                     event = ET.SubElement(not_gate, "event")
                     event.set("name", event_name[1:len(event_name)])
-                    if event_name[1] == 'e':
+                    if event_name[1] != 'g':
                         basic_event.add(event_name[1:len(event_name)])
     raw.close()
 
@@ -151,19 +197,26 @@ for file_name in files:
     with open(new_file_name[0:len(new_file_name)-3]+"xml", 'w') as fs:
         reared_content.writexml(fs, addindent=" ", newl="\n")
 
-
+    real_basic_count = 0
+    for event in basic_event:
+        if event not in root_set:
+            real_basic_count += 1
+    num_statistic += file_name[0:len(file_name)-4] + " " + str(real_basic_count) + " " + str(len(root_set)) + "\n"
     basic_open_psa = ET.Element("open-psa")
     basic_define_fault_tree = ET.SubElement(basic_open_psa, "define-fault-tree")
     basic_define_fault_tree.set("name", "test")
     for event in basic_event:
         define_basic_event = ET.SubElement(basic_define_fault_tree, "define-basic-event")
         define_basic_event.set("name", event)
-        ET.SubElement(define_basic_event, "float").set("value", "0.01")
+        ET.SubElement(define_basic_event, "float").set("value", "1")
     rough_string = ET.tostring(basic_open_psa, 'utf-8')
     reared_content = minidom.parseString(rough_string)
     new_file_name = "../result/"+file_name
     with open(new_file_name[0:len(new_file_name)-4]+"-basic-events.xml", 'w') as fs:
         reared_content.writexml(fs, addindent=" ", newl="\n")
+
+statistic = open("statistic", "w")
+statistic.write(num_statistic)
 
 
 

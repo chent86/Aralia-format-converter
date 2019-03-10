@@ -17,3 +17,5 @@
 |raw/|Aralia format file|
 |result/|Open-PSA format file|
 |test/xftar_result|xftar result|
+|test/statistic|statistic including Module, MSC, Time, Memory|
+|parset/statistic| statistic including Gate, Event|
