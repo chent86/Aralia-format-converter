@@ -11,13 +11,15 @@ ws.write(0,1,"#Event")
 ws.write(0,2,"#Gate")
 xls_line = 0  
 
+os.system("rm ../result/*")
+
 for root,dirs,files in os.walk("../raw"):
     break
 file_list = [
             #  "baobab1.dag",
             #  "baobab2.dag",
             #  "baobab3.dag",
-            #  "chinese.dag",
+             "chinese.dag",
             #  "das9201.dag",
             #  "das9202.dag",
             #  "das9203.dag",
@@ -48,9 +50,8 @@ file_list = [
             #  "isp9606.dag",
             #  "isp9607.dag",
             #  "jbd9601.dag",
-
             # "cea9601.dag",
-             "das9209.dag",
+            #  "das9209.dag",
             #  "edf9203.dag",
             #  "edf9204.dag",
             #  "edf9206.dag",
@@ -59,7 +60,7 @@ file_list = [
             #  "edfpa14q.dag",
             #  "nus9601.dag"
             ]
-num_statistic = "Benchmark  #Event  #Gate\n"
+
 # for file_name in files:
 for file_name in file_list:
     print(file_name)
@@ -246,7 +247,7 @@ for file_name in file_list:
             real_basic_event.add(event) #确保basic_event不是gate_event
     basic_event = real_basic_event
     # 包括为xor额外添加的门
-    num_statistic += file_name[0:len(file_name)-4] + " " + str(real_basic_count) + " " + str(len(root_set)+xo) + "\n"
+
     xls_line += 1
     ws.write(xls_line, 0, file_name[0:len(file_name)-4])
     ws.write(xls_line, 1, str(real_basic_count))
@@ -264,8 +265,6 @@ for file_name in file_list:
     with open(new_file_name[0:len(new_file_name)-4]+"-basic-events.xml", 'w') as fs:
         reared_content.writexml(fs, addindent=" ", newl="\n")
 
-statistic = open("statistic", "w")
-statistic.write(num_statistic)
 wb.save('statistic.xls') 
 
 

@@ -80,8 +80,8 @@ def helper(limit_time, output_file, current_xls_line):
 		module_num = re.findall(pattern, cmd_output)[-1]
 		ws.write(current_xls_line, 3, module_num.split(" ")[-1])	
 
-		ws.write(current_xls_line, 5, str(user_time + system_time))
-		ws.write(current_xls_line, 6, str(memory))
+		ws.write(current_xls_line, 5, user_time + system_time)
+		ws.write(current_xls_line, 6, memory)
 		return 2
 
 
@@ -98,7 +98,7 @@ file_list = [
             #  "baobab1.dag",
             #  "baobab2.dag",
             #  "baobab3.dag",
-            #  "chinese.dag",
+             "chinese.dag",
             #  "das9201.dag",
             #  "das9202.dag",
             #  "das9203.dag",
@@ -129,9 +129,8 @@ file_list = [
             #  "isp9606.dag",
             #  "isp9607.dag",
             #  "jbd9601.dag",
-
             # "cea9601.dag",
-             "das9209.dag",
+            #  "das9209.dag",
             #  "edf9203.dag",
             #  "edf9204.dag",
             #  "edf9206.dag",
