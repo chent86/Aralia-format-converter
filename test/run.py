@@ -94,52 +94,6 @@ ws.write(0,5,"Time(s)")
 ws.write(0,6,"Memory(K)")
 xls_line = 0   
 
-file_list = [
-            #  "baobab1.dag",
-            #  "baobab2.dag",
-            #  "baobab3.dag",
-             "chinese.dag",
-            #  "das9201.dag",
-            #  "das9202.dag",
-            #  "das9203.dag",
-            #  "das9204.dag",
-            #  "das9205.dag",
-            #  "das9206.dag",
-            #  "das9207.dag",
-            #  "das9208.dag",
-            #  "das9601.dag",
-            #  "das9701.dag",
-            #  "edf9201.dag",
-            #  "edf9202.dag",
-            #  "edf9205.dag",
-            #  "edfpa14p.dag",
-            #  "edfpa14r.dag",
-            #  "edfpa15b.dag",
-            #  "edfpa15o.dag",
-            #  "edfpa15p.dag",
-            #  "edfpa15q.dag",
-            #  "edfpa15r.dag",
-            #  "elf9601.dag",
-            #  "ftr10.dag",
-            #  "isp9601.dag",
-            #  "isp9602.dag",
-            #  "isp9603.dag",
-            #  "isp9604.dag",
-            #  "isp9605.dag",
-            #  "isp9606.dag",
-            #  "isp9607.dag",
-            #  "jbd9601.dag",
-            # "cea9601.dag",
-            #  "das9209.dag",
-            #  "edf9203.dag",
-            #  "edf9204.dag",
-            #  "edf9206.dag",
-            #  "edfpa14b.dag",
-            #  "edfpa14o.dag",
-            #  "edfpa14q.dag",
-            #  "nus9601.dag"
-            ]
-
 os.system("rm -rf xftar_result")
 os.system("mkdir xftar_result")
 raw = open("script.xml", "r")
@@ -151,9 +105,7 @@ statistic = "Benchmark #Module #prime imp  Time(s) Memory(K)\n"
 for roots,dirs,files in os.walk("../raw"):
     break
 
-# for file_name in files:
-for file_name in file_list:
-    # file_name = "chinese.dag"
+for file_name in files:
 	print(file_name)
 	file_name = file_name[0:len(file_name)-4]
 	root.getchildren()[0].getchildren()[0].set("input", "../result/"+file_name+".xml")

@@ -11,7 +11,8 @@ ws.write(0,1,"#Event")
 ws.write(0,2,"#Gate")
 xls_line = 0  
 
-os.system("rm ../result/*")
+os.system("rm -rf ../result")
+os.system("mkdir ../result")
 
 for root,dirs,files in os.walk("../raw"):
     break
