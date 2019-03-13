@@ -7,7 +7,7 @@
 ```
 2. use xftar to run all tests
 ```
-    python3 test/run.py
+    python3 test/new_run.py
 ```
 
 ## description
@@ -17,5 +17,5 @@
 |raw/|Aralia format file|
 |result/|Open-PSA format file|
 |test/xftar_result|xftar result|
-|test/statistic|statistic including Module, MSC, Time, Memory|
-|parset/statistic| statistic including Gate, Event|
+|test/statistic.xls|statistic including Module, MSC, Time, Memory|
+|parset/statistic.xls| statistic including Gate, Event|
