@@ -1,1 +1,4 @@
 /test/xftar_result/
+/test/tmp_output
+/test/statistic.xls
+/parser/statistic.xls
