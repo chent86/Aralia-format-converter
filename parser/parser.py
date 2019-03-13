@@ -15,54 +15,8 @@ os.system("rm ../result/*")
 
 for root,dirs,files in os.walk("../raw"):
     break
-file_list = [
-            #  "baobab1.dag",
-            #  "baobab2.dag",
-            #  "baobab3.dag",
-             "chinese.dag",
-            #  "das9201.dag",
-            #  "das9202.dag",
-            #  "das9203.dag",
-            #  "das9204.dag",
-            #  "das9205.dag",
-            #  "das9206.dag",
-            #  "das9207.dag",
-            #  "das9208.dag",
-            #  "das9601.dag",
-            #  "das9701.dag",
-            #  "edf9201.dag",
-            #  "edf9202.dag",
-            #  "edf9205.dag",
-            #  "edfpa14p.dag",
-            #  "edfpa14r.dag",
-            #  "edfpa15b.dag",
-            #  "edfpa15o.dag",
-            #  "edfpa15p.dag",
-            #  "edfpa15q.dag",
-            #  "edfpa15r.dag",
-            #  "elf9601.dag",
-            #  "ftr10.dag",
-            #  "isp9601.dag",
-            #  "isp9602.dag",
-            #  "isp9603.dag",
-            #  "isp9604.dag",
-            #  "isp9605.dag",
-            #  "isp9606.dag",
-            #  "isp9607.dag",
-            #  "jbd9601.dag",
-            # "cea9601.dag",
-            #  "das9209.dag",
-            #  "edf9203.dag",
-            #  "edf9204.dag",
-            #  "edf9206.dag",
-            #  "edfpa14b.dag",
-            #  "edfpa14o.dag",
-            #  "edfpa14q.dag",
-            #  "nus9601.dag"
-            ]
 
-# for file_name in files:
-for file_name in file_list:
+for file_name in files:
     print(file_name)
     raw = open("../raw/"+file_name, "r")
     open_psa = ET.Element("open-psa")
