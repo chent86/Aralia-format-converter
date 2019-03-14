@@ -205,8 +205,8 @@ for file_name in files:
 
     xls_line += 1
     ws.write(xls_line, 0, file_name[0:len(file_name)-4])
-    ws.write(xls_line, 1, str(real_basic_count))
-    ws.write(xls_line, 2, str(len(root_set)+xo))
+    ws.write(xls_line, 1, real_basic_count)
+    ws.write(xls_line, 2, len(root_set)+xo)
     basic_open_psa = ET.Element("open-psa")
     basic_define_fault_tree = ET.SubElement(basic_open_psa, "define-fault-tree")
     basic_define_fault_tree.set("name", "test")

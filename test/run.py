@@ -78,7 +78,7 @@ def helper(limit_time, output_file, current_xls_line):
 			cmd_output += i
 		pattern = r"#Modules.*[0-9]*"
 		module_num = re.findall(pattern, cmd_output)[-1]
-		ws.write(current_xls_line, 3, module_num.split(" ")[-1])	
+		ws.write(current_xls_line, 3, int(module_num.split(" ")[-1]))	
 
 		ws.write(current_xls_line, 5, user_time + system_time)
 		ws.write(current_xls_line, 6, memory)
@@ -121,6 +121,6 @@ for file_name in files:
 	if code == 2:
 		line_count = os.popen("wc xftar_result/"+file_name+" -l")
 		line_tmp = line_count.read().split(" ")[0]
-		ws.write(xls_line, 4, line_tmp)
+		ws.write(xls_line, 4, int(line_tmp))
 
 wb.save('statistic.xls')  
