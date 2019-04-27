@@ -3,11 +3,13 @@
 ## quick start
 1. parse Aralia to Open-PSA:
 ```
-    python3 parser/parser.py
+    cd parser
+    python3 parser.py
 ```
 2. use xftar to run all tests
 ```
-    python3 test/run.py
+    cd test
+    python3 run.py
 ```
 
 ## description
