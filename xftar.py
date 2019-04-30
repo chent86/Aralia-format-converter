@@ -8,8 +8,10 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 import xlwt
 
+BRANCH_DIR = "branch"
+
 # return 0(memory out); 1(time out); 2(successful) 
-def helper(limit_time, output_file, current_xls_line):
+def helper(limit_time, output_file, current_xls_line, ws):
 	command = "/usr/bin/time -v ./xftar script.xml > "+output_file
 
 	gc.collect()
@@ -84,43 +86,41 @@ def helper(limit_time, output_file, current_xls_line):
 		ws.write(current_xls_line, 6, memory)
 		return 2
 
+def process(branch_name):
+	wb = xlwt.Workbook(encoding = 'ascii')
+	ws = wb.add_sheet('My Worksheet')
+	ws.write(0,0,"Benchmark")
+	ws.write(0,3,"#Module")
+	ws.write(0,4,"#prime imp")
+	ws.write(0,5,"Time(s)")
+	ws.write(0,6,"Memory(K)")
+	xls_line = 0   
 
-wb = xlwt.Workbook(encoding = 'ascii')
-ws = wb.add_sheet('My Worksheet')         
-ws.write(0,0,"Benchmark")
-ws.write(0,3,"#Module")
-ws.write(0,4,"#prime imp")
-ws.write(0,5,"Time(s)")
-ws.write(0,6,"Memory(K)")
-xls_line = 0   
+	raw = open("script.xml", "r")
+	file_context = raw.read()
+	root = ET.fromstring(file_context)
+	output = ""
+	statistic = "Benchmark #Module #prime imp  Time(s) Memory(K)\n"
 
-os.system("rm -rf xftar_result")
-os.system("mkdir xftar_result")
-raw = open("script.xml", "r")
-file_context = raw.read()
-root = ET.fromstring(file_context)
-output = ""
-statistic = "Benchmark #Module #prime imp  Time(s) Memory(K)\n"
+	for roots,dirs,files in os.walk(BRANCH_DIR + "/" + branch_name):
+		break
 
-for roots,dirs,files in os.walk("../raw"):
-    break
+	for file_name in files:
+		print(file_name)
+		file_name = file_name[0:len(file_name)-4]
+		root.getchildren()[0].getchildren()[0].set("input", "output/" + branch_name + "/" + file_name + ".xml")
+		root.getchildren()[0].getchildren()[1].set("input", "output/" + branch_name + "/" + file_name + "-basic-events.xml")
+		root.getchildren()[3].getchildren()[0].set("output", "output/" + branch_name + "/" + file_name)
+		rough_string = ET.tostring(root, 'utf-8')
+		reared_content = minidom.parseString(rough_string)
+		with open("script.xml", 'w') as fs:
+			reared_content.writexml(fs, addindent=" ")    
+		code = helper(3, "output/" + branch_name + "/" + "tmp_output", xls_line+1, ws)
+		xls_line += 1
+		ws.write(xls_line, 0, file_name)
+		if code == 2:
+			line_count = os.popen("wc output/" + branch_name + "/" + file_name+" -l")
+			line_tmp = line_count.read().split(" ")[0]
+			ws.write(xls_line, 4, int(line_tmp))
 
-for file_name in files:
-	print(file_name)
-	file_name = file_name[0:len(file_name)-4]
-	root.getchildren()[0].getchildren()[0].set("input", "../result/"+file_name+".xml")
-	root.getchildren()[0].getchildren()[1].set("input", "../result/"+file_name+"-basic-events.xml")
-	root.getchildren()[3].getchildren()[0].set("output", "xftar_result/"+file_name)
-	rough_string = ET.tostring(root, 'utf-8')
-	reared_content = minidom.parseString(rough_string)
-	with open("script.xml", 'w') as fs:
-		reared_content.writexml(fs, addindent=" ")    
-	code = helper(3600, "tmp_output", xls_line+1)
-	xls_line += 1
-	ws.write(xls_line, 0, file_name)
-	if code == 2:
-		line_count = os.popen("wc xftar_result/"+file_name+" -l")
-		line_tmp = line_count.read().split(" ")[0]
-		ws.write(xls_line, 4, int(line_tmp))
-
-wb.save('statistic.xls')  
+	wb.save("output/" + branch_name + "/" + 'xftar_result.xls')  
