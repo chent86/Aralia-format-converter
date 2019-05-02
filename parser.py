@@ -3,10 +3,12 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 import xlwt
 
-BRANCH_DIR = 'branch'
+BRANCH_DIR = 'example'
 
 def parse(branch_name):
-    os.system("mkdir output/" + branch_name)
+    branch_path = BRANCH_DIR + "/" + branch_name
+    branch_output_path = BRANCH_DIR + "/output/" + branch_name
+    os.system("mkdir " + branch_output_path)
     operator_tag = {"|":"or", "&":"and", "#":"xor", "-":"not"}
 
     wb = xlwt.Workbook(encoding = 'ascii')
@@ -15,12 +17,16 @@ def parse(branch_name):
     ws.write(0,2,"#Gate")
     xls_line = 0  
 
-    for root,dirs,files in os.walk(BRANCH_DIR + "/" + branch_name):
+    for root, dirs, files in os.walk(branch_path):
         break
 
-    for file_name in files:
+    for dir_name in dirs:
+        output_dir_path = branch_output_path + "/" + dir_name
+        os.system("mkdir " + output_dir_path)
+        file_name = dir_name + "/" + dir_name + ".dag"
         print(file_name)
-        raw = open(BRANCH_DIR + "/"+ branch_name + "/" + file_name, "r")
+        file_path = branch_path + "/" + file_name
+        raw = open(file_path, "r")
         open_psa = ET.Element("open-psa")
         define_fault_tree = ET.SubElement(open_psa, "define-fault-tree")
         top_event = "r1"
@@ -191,8 +197,8 @@ def parse(branch_name):
         define_fault_tree.set("name", top_event)
         rough_string = ET.tostring(open_psa, 'utf-8')
         reared_content = minidom.parseString(rough_string)
-        new_file_name = "output/" + branch_name + "/" + file_name
-        with open(new_file_name[0:len(new_file_name)-3]+"xml", 'w') as fs:
+        new_file_name = branch_path + "/" + dir_name + "/" + dir_name + ".xml"
+        with open(new_file_name, 'w') as fs:
             reared_content.writexml(fs, addindent=" ", newl="\n")
 
         real_basic_count = 0
@@ -205,7 +211,7 @@ def parse(branch_name):
         # 包括为xor额外添加的门
 
         xls_line += 1
-        ws.write(xls_line, 0, file_name[0:len(file_name)-4])
+        ws.write(xls_line, 0, file_name[:len(file_name)-4])
         ws.write(xls_line, 1, real_basic_count)
         ws.write(xls_line, 2, len(root_set)+xo)
         basic_open_psa = ET.Element("open-psa")
@@ -217,8 +223,8 @@ def parse(branch_name):
             ET.SubElement(define_basic_event, "float").set("value", "1")
         rough_string = ET.tostring(basic_open_psa, 'utf-8')
         reared_content = minidom.parseString(rough_string)
-        new_file_name = "output/" + branch_name + "/" + file_name
-        with open(new_file_name[0:len(new_file_name)-4]+"-basic-events.xml", 'w') as fs:
+        new_file_name = branch_path + "/" + dir_name + "/" + dir_name + "-basic-events.xml"
+        with open(new_file_name, 'w') as fs:
             reared_content.writexml(fs, addindent=" ", newl="\n")
 
-    wb.save('output/' + branch_name + '/' + 'parse_result.xls') 
+    wb.save(branch_output_path + "/" + "parse_result.xls") 

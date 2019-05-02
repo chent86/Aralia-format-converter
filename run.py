@@ -3,13 +3,15 @@ from xftar import process
 import os
 
 def run(branch_name):
-    os.system("rm -rf output")
-    os.system("mkdir output")
-    print("=====================  parse stage  =====================")
+    print("===================== " + branch_name + " parse stage  =====================")
     parse(branch_name)
-    print("=====================  xftar stage  =====================")
+    print("===================== " + branch_name + " xftar stage  =====================")
     process(branch_name)
 
 
 if __name__ == '__main__':
-    run("raw")
+    os.system("rm -rf example/output")
+    os.system("mkdir example/output")
+    run("ft")
+    run("qg6")
+    run("test")

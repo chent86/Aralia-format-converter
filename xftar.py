@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 import xlwt
 
-BRANCH_DIR = "branch"
+BRANCH_DIR = "example"
 
 # return 0(memory out); 1(time out); 2(successful) 
 def helper(limit_time, output_file, current_xls_line, ws):
@@ -102,25 +102,25 @@ def process(branch_name):
 	output = ""
 	statistic = "Benchmark #Module #prime imp  Time(s) Memory(K)\n"
 
-	for roots,dirs,files in os.walk(BRANCH_DIR + "/" + branch_name):
+	branch_dir_path = BRANCH_DIR + "/" + branch_name
+	output_dir_path = BRANCH_DIR + "/output/" + branch_name 
+	for roots,dirs,files in os.walk(branch_dir_path):
 		break
-
-	for file_name in files:
-		print(file_name)
-		file_name = file_name[0:len(file_name)-4]
-		root.getchildren()[0].getchildren()[0].set("input", "output/" + branch_name + "/" + file_name + ".xml")
-		root.getchildren()[0].getchildren()[1].set("input", "output/" + branch_name + "/" + file_name + "-basic-events.xml")
-		root.getchildren()[3].getchildren()[0].set("output", "output/" + branch_name + "/" + file_name)
+	for dir_name in dirs:
+		print(dir_name)
+		root.getchildren()[0].getchildren()[0].set("input", branch_dir_path + "/" + dir_name + "/" + dir_name + ".xml")
+		root.getchildren()[0].getchildren()[1].set("input", branch_dir_path + "/" + dir_name + "/" + dir_name + "-basic-events.xml")
+		root.getchildren()[3].getchildren()[0].set("output", output_dir_path + "/" + dir_name + "/" + dir_name + ".mcs")
 		rough_string = ET.tostring(root, 'utf-8')
 		reared_content = minidom.parseString(rough_string)
 		with open("script.xml", 'w') as fs:
 			reared_content.writexml(fs, addindent=" ")    
-		code = helper(3, "output/" + branch_name + "/" + "tmp_output", xls_line+1, ws)
+		code = helper(1, output_dir_path + "/" + dir_name + "/tmp_output", xls_line+1, ws)
 		xls_line += 1
-		ws.write(xls_line, 0, file_name)
+		ws.write(xls_line, 0, dir_name)
 		if code == 2:
-			line_count = os.popen("wc output/" + branch_name + "/" + file_name+" -l")
+			line_count = os.popen("wc " + output_dir_path + "/" + dir_name + "/" + dir_name + ".mcs -l")
 			line_tmp = line_count.read().split(" ")[0]
 			ws.write(xls_line, 4, int(line_tmp))
 
-	wb.save("output/" + branch_name + "/" + 'xftar_result.xls')  
+	wb.save(output_dir_path + "/" + 'xftar_result.xls')  
