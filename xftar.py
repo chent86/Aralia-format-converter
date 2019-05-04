@@ -7,8 +7,7 @@ import time
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 import xlwt
-
-BRANCH_DIR = "example"
+from config import MAX_TIME
 
 # return 0(memory out); 1(time out); 2(successful) 
 def helper(limit_time, output_file, current_xls_line, ws):
@@ -86,7 +85,7 @@ def helper(limit_time, output_file, current_xls_line, ws):
 		ws.write(current_xls_line, 6, memory)
 		return 2
 
-def process(branch_name):
+def process(branch_dir, branch_name):
 	wb = xlwt.Workbook(encoding = 'ascii')
 	ws = wb.add_sheet('My Worksheet')
 	ws.write(0,0,"Benchmark")
@@ -102,8 +101,8 @@ def process(branch_name):
 	output = ""
 	statistic = "Benchmark #Module #prime imp  Time(s) Memory(K)\n"
 
-	branch_dir_path = BRANCH_DIR + "/" + branch_name
-	output_dir_path = BRANCH_DIR + "/output/" + branch_name 
+	branch_dir_path = branch_dir + "/" + branch_name
+	output_dir_path = branch_dir + "/output/" + branch_name 
 	for roots,dirs,files in os.walk(branch_dir_path):
 		break
 	for dir_name in dirs:
@@ -115,7 +114,7 @@ def process(branch_name):
 		reared_content = minidom.parseString(rough_string)
 		with open("script.xml", 'w') as fs:
 			reared_content.writexml(fs, addindent=" ")    
-		code = helper(1, output_dir_path + "/" + dir_name + "/tmp_output", xls_line+1, ws)
+		code = helper(MAX_TIME, output_dir_path + "/" + dir_name + "/tmp_output", xls_line+1, ws)
 		xls_line += 1
 		ws.write(xls_line, 0, dir_name)
 		if code == 2:
