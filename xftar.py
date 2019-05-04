@@ -7,12 +7,14 @@ import time
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 import xlwt
-from config import MAX_TIME
+from config import MAX_TIME, OUTPUT_MCS
 
 # return 0(memory out); 1(time out); 2(successful) 
 def helper(limit_time, output_file, current_xls_line, ws):
-	command = "/usr/bin/time -v ./xftar script.xml > "+output_file
-
+	if OUTPUT_MCS:
+		command = "/usr/bin/time -v ./xftar script_with_output.xml > "+output_file
+	else:
+		command = "/usr/bin/time -v ./xftar script.xml > "+output_file
 	gc.collect()
 	p = subprocess.Popen(command, preexec_fn = os.setsid, shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 	begin_time = time.time()
@@ -94,8 +96,10 @@ def process(branch_dir, branch_name):
 	ws.write(0,5,"Time(s)")
 	ws.write(0,6,"Memory(K)")
 	xls_line = 0   
-
-	raw = open("script.xml", "r")
+	if OUTPUT_MCS:
+		raw = open("script_with_output.xml", "r")
+	else:
+		raw = open("script.xml", "r")
 	file_context = raw.read()
 	root = ET.fromstring(file_context)
 	output = ""
@@ -109,15 +113,20 @@ def process(branch_dir, branch_name):
 		print(dir_name)
 		root.getchildren()[0].getchildren()[0].set("input", branch_dir_path + "/" + dir_name + "/" + dir_name + ".xml")
 		root.getchildren()[0].getchildren()[1].set("input", branch_dir_path + "/" + dir_name + "/" + dir_name + "-basic-events.xml")
-		root.getchildren()[3].getchildren()[0].set("output", output_dir_path + "/" + dir_name + "/" + dir_name + ".mcs")
+		if OUTPUT_MCS:
+			root.getchildren()[3].getchildren()[0].set("output", output_dir_path + "/" + dir_name + "/" + dir_name + ".mcs")
 		rough_string = ET.tostring(root, 'utf-8')
 		reared_content = minidom.parseString(rough_string)
-		with open("script.xml", 'w') as fs:
-			reared_content.writexml(fs, addindent=" ")    
+		if OUTPUT_MCS:
+			with open("script_with_output.xml", 'w') as fs:
+				reared_content.writexml(fs, addindent=" ")
+		else:
+			with open("script.xml", 'w') as fs:
+				reared_content.writexml(fs, addindent=" ")			
 		code = helper(MAX_TIME, output_dir_path + "/" + dir_name + "/tmp_output", xls_line+1, ws)
 		xls_line += 1
 		ws.write(xls_line, 0, dir_name)
-		if code == 2:
+		if code == 2 and OUTPUT_MCS:
 			line_count = os.popen("wc " + output_dir_path + "/" + dir_name + "/" + dir_name + ".mcs -l")
 			line_tmp = line_count.read().split(" ")[0]
 			ws.write(xls_line, 4, int(line_tmp))

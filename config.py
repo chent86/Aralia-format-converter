@@ -1,1 +1,2 @@
-MAX_TIME = 60
+MAX_TIME = 2
+OUTPUT_MCS = True
